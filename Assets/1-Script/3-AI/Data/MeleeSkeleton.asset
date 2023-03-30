@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ac65c284bb4d94aafc967058cd0365, type: 3}
+  m_Name: MeleeSkeleton
+  m_EditorClassIdentifier: 
+  attackData:
+    attackType: 1
+    attackVFX: {fileID: 0}
+    attackSpeed: 0
+    waitTime: 0
+    attackInRange: 0
+    damage: 0
+    scaleBegin: 0
+    scaleEnd: 0
+    time: 0
+  randomMoveData:
+    attackTarget: 1
+    attackRange: 4
+    moveRangeMax: 6
+    moveRangeMin: 3
+    speed: 3
