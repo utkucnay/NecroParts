@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6892019352893143000}
   - component: {fileID: 6892019352893142999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 6892019353440359627}
   - component: {fileID: 6892019353440359626}
   - component: {fileID: 2005500588}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

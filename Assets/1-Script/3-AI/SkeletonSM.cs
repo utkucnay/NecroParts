@@ -9,6 +9,7 @@ public class SkeletonSM : StateMachine
     public RandomMoveState randomMove;
     public FollowAttackTargetState followAttackTargetState;
     public AttackTargetState attackTargetState;
+    public WaitState waitState;
 
     public SkeletonSMConfig sSMConfig;
 
@@ -19,10 +20,12 @@ public class SkeletonSM : StateMachine
         randomMove = new RandomMoveState(this, sSMConfig.randomMoveData);
         followAttackTargetState = new FollowAttackTargetState(this, sSMConfig.attackData, sSMConfig.randomMoveData);
         attackTargetState = new AttackTargetState(this, sSMConfig.attackData);
+        waitState = new WaitState(this, sSMConfig.attackData);
 
         states.Add(randomMove);
         states.Add(followAttackTargetState);
         states.Add(attackTargetState);
+        states.Add(waitState);
 
         InitAllStates();
     }

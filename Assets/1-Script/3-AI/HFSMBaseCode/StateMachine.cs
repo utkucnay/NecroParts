@@ -6,7 +6,7 @@ public class StateMachine : MonoBehaviour
 {
     BaseState currentState;
 
-    protected List<BaseState> states;
+     protected List<BaseState> states;
 
     protected virtual void Awake()
     {

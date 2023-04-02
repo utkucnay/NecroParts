@@ -7,7 +7,6 @@ public class AttackTargetState : AttackState
 {
     Skeleton skeleton;
 
-    float timer = 0;
     public AttackTargetState(StateMachine stateMachine, AttackData attackData) : base(stateMachine, attackData)
     {
     }
@@ -22,7 +21,6 @@ public class AttackTargetState : AttackState
     {
         base.StartState();
 
-        timer = 0;
 
         if (IsValidTarget())
         {
@@ -42,26 +40,22 @@ public class AttackTargetState : AttackState
                     break;
             }
             //CommandStream.s_Instance.sequencer.AddCommand(new RotateCommand(targetPos, stateMachine.VFX));
-
+            skeleton.RotateDir(targetPos);
 
         }
         else
         {
             stateMachine.ChangeState(stateMachine.GetState<AttackTargetState>());
         }
+
+        stateMachine.ChangeState(stateMachine.GetState<WaitState>());
     }
 
     protected override void UpdateState()
     {
         base.UpdateState();
 
-        if (timer >= attackData.waitTime)
-        {
-            stateMachine.ChangeState(stateMachine.GetState<RandomMoveState>());
-            return;
-        }
 
-        timer += Time.deltaTime;
     }
 
     protected override void OnEnd()
@@ -82,7 +76,7 @@ public class AttackTargetState : AttackState
 
     void MeleeAttack(GameObject slashObj, Vector3 targetPos)
     {
-        /*var distVec = targetPos - transform.position;
+        var distVec = targetPos - transform.position;
         if (distVec.x > 0)
         {
             slashObj.GetComponentInChildren<SpriteRenderer>().flipX = true;
@@ -93,17 +87,17 @@ public class AttackTargetState : AttackState
         }
 
         var meleeData = slashObj.GetComponent<AttackSlash>();
-        meleeData.damage = (int)(attackData.damage * skeleton.GetDamageMultipler());
+        meleeData.damage = (int)(attackData.damage);
         meleeData.SetPos(transform.position);
 
         var meleeGFX = slashObj.GetComponent<MeleeVFX>();
         meleeGFX.SetGFXData(new MeleeGFXData()
         {
-            targetGFXPos = targetPos,
-            baseGFXPos = transform.position,
-            scaleBegin = attackData.scaleBegin,
-            scaleEnd = attackData.scaleEnd,
+            targetDir = targetPos - transform.position,
+            baseDir = distVec.x > 0 ? new Vector2(1, 0): new Vector2(-1, 0),
+            scaleAttackBegin = attackData.scaleAttackBegin,
+            scaleAttackEnd = Utils.Scale(0, attackData.attackInRange, 2, 1, Vector2.Distance(targetPos, transform.position)),
             time = attackData.time
-        });*/
+        });
     }
 }

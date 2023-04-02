@@ -12,12 +12,17 @@ public class AttackData
     }
 
     public AttackType attackType;
+
+    [Header("Generic Settings")]
     public GameObject attackVFX;
-    public float attackSpeed;
     public float waitTime;
     public float attackInRange;
     public int damage;
-    public float scaleBegin;
-    public float scaleEnd;
+
+    [Header("Ranged Settings")]
+    public float attackSpeed;
+
+    [Header("Melee Settings")]
+    public float scaleAttackBegin;
     public float time;
 }

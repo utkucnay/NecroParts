@@ -7,6 +7,6 @@ public class Camera : MonoBehaviour
     private void LateUpdate()
     {
         Vector2 pos = Player.s_Instance.transform.position;
-        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+        transform.position = new Vector3(pos.x, pos.y, -70 + pos.y);
     }
 }

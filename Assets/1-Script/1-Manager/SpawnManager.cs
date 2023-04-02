@@ -20,23 +20,27 @@ public class SpawnManager : Singleton<SpawnManager>
 
         EventManager.AddEventAction("Start Run", 
             () => enabled = true);
+        EventManager.AddEventAction("End Run",
+            () => enabled = false);
     }
 
     private void OnEnable()
     {
         Debug.Log("Active Spawner");
+
+        index = 0;
+        stressZone = stressZoneData.stressZones[index];
+        StartCoroutine(SpawnerLogic());
     }
 
     private void OnDisable()
     {
         Debug.Log("Inactive Spawner");
+        StopAllCoroutines();
     }
 
     private void Start()
     {
-        index = 0;
-        stressZone = stressZoneData.stressZones[index];
-        StartCoroutine(SpawnerLogic());
     }
 
     void Update()
@@ -105,6 +109,15 @@ public class SpawnManager : Singleton<SpawnManager>
 
         var obj = Instantiate(gameObject);
         obj.transform.position = GameManager.Translate3D(position);
+    }
+
+    public Vector3 PosInCamera()
+    {
+        var dir = Vector2.up;
+        dir.Rotate(Random.Range(0, 360));
+        dir *= Random.Range(3, 9);
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+        return dir + (Vector2)camera.transform.position;
     }
 
     public void SpawnOutCamera(GameObject gameObject)

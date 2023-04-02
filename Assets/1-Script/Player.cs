@@ -19,7 +19,7 @@ public class Player : Unit
         else
             Destroy(this);
 
-        gameObject.SetActive(false);
+        EventManager.AddEventAction("Start Game", () => gameObject.SetActive(false));
 
         EventManager.AddEventAction("Start Run", () => gameObject.SetActive(true));
         EventManager.AddEventAction("End Run", () => gameObject.SetActive(false));
@@ -28,9 +28,14 @@ public class Player : Unit
     private void Update()
     {
         MoveUpdate();
+        UIUpdate();
         CalculateTargetEnemyPoints();
     }
 
+    void UIUpdate()
+    {
+
+    }
     void MoveUpdate()
     {
         Vector2 dir = Vector2.zero;
@@ -56,9 +61,13 @@ public class Player : Unit
         MoveDir(dir * speed);
         RotateDir(dir);
     }
-
     void CalculateTargetEnemyPoints()
     {
-        targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 7, 20);
+        targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 9, 20);
+    }
+
+    protected override void Death()
+    {
+        
     }
 }

@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: GameStress
   m_EditorClassIdentifier: 
   stressZones:
+  - enemyPrefabs: []
+    bossPrefabs: []
+    timeSpent: 4
+    minSpawnCount: 0
+    maxSpawnCount: 0
+    minSpawnWaitTime: 1
+    maxSpawnWaitTime: 1
   - enemyPrefabs:
     - prefab: {fileID: 7571025913804648541, guid: 7209c7b06d501cf4faf9be4f84fccef4, type: 3}
       rarity: 100
     bossPrefabs: []
-    timeSpent: 50
-    minSpawnCount: 1
-    maxSpawnCount: 1
-    minSpawnWaitTime: 1.25
-    maxSpawnWaitTime: 3
+    timeSpent: 300
+    minSpawnCount: 4
+    maxSpawnCount: 7
+    minSpawnWaitTime: 1.5
+    maxSpawnWaitTime: 1.5

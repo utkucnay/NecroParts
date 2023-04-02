@@ -33,7 +33,7 @@ public class FollowAttackTargetState : AttackState
             var dir = Vector3.Normalize(targetObject.transform.position - transform.position);
             //move.Velocity = targetObject.transform.position - transform.position;
 
-            skeleton.MoveDir(dir);
+            skeleton.MoveDir(dir * randomMoveData.speed);
             skeleton.RotateDir(dir);
 
             if (Vector2.Distance(targetObject.transform.position, transform.position) <= attackData.attackInRange)
@@ -78,7 +78,7 @@ public class FollowAttackTargetState : AttackState
 
         for (int i = 0; i < length; i++)
         {
-            if (playerTargetPoints[i] > 0)
+            if (targetPoints[i] > 0)
             {
                 targetPoints[i] = targetPoints[i] + playerTargetPoints[i];
             }

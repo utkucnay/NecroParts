@@ -12,6 +12,8 @@ public class AIManager : Singleton<AIManager>
     LinkedList<Enemy> Enemies;
     LinkedList<Skeleton> skeletons;
 
+    Queue<Skeleton> deathSkeletons;
+
     public LinkedList<int> priorities;
 
     public override void Awake()
@@ -20,9 +22,10 @@ public class AIManager : Singleton<AIManager>
         Enemies = new LinkedList<Enemy>();
         skeletons = new LinkedList<Skeleton>();
         priorities = new LinkedList<int>();
+        deathSkeletons = new();
     }
 
-        public int GetPriortySkeleton()
+    public int GetPriortySkeleton()
     {
         var last = priorities.Last;
         priorities.RemoveLast();
@@ -76,6 +79,19 @@ public class AIManager : Singleton<AIManager>
         skeletons.Remove(skeleton);
     }
 
+    public void DeathSkeleton(Skeleton skeleton)
+    {
+        deathSkeletons.Enqueue(skeleton);
+    }
+
+    public void SpawnSkeleton(Vector3 pos)
+    {
+        if (deathSkeletons.Count <= 0) return;
+        var skeleton =  deathSkeletons.Dequeue();
+        skeleton.gameObject.transform.position = pos;
+        skeleton.gameObject.SetActive(true);
+    }
+
     public LinkedList<Skeleton> GetSkeletons()
     {
         return skeletons;
@@ -104,5 +120,24 @@ public class AIManager : Singleton<AIManager>
         }
 
         return targetPoints.ToArray();
+    }
+
+    public void DestroyAllObject()
+    {
+        int lenght = Enemies.Count;
+        for (int i = 0; i < lenght; i++)
+        {
+            var enemy = Enemies.First;
+            Enemies.RemoveFirst();
+            Destroy(enemy.Value.gameObject);
+        }
+
+        lenght = skeletons.Count;
+        for (int i = 0; i < lenght; i++)
+        {
+            var skeleton = skeletons.First;
+            Enemies.RemoveFirst();
+            Destroy(skeleton.Value.gameObject);
+        }
     }
 }
