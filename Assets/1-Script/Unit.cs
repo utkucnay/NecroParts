@@ -11,6 +11,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected float maxHealth;
     protected float health;
 
+    bool death;
+
     protected virtual void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -21,6 +23,7 @@ public abstract class Unit : MonoBehaviour
     protected virtual void Start()
     {
         health = maxHealth;
+        death = false;
     }
 
     protected virtual void OnEnable()
@@ -49,9 +52,10 @@ public abstract class Unit : MonoBehaviour
     {
         health -= damage;
 
-        if (health < 0)
+        if (health < 0 && !death)
         {
             Death();
+            death = true;
         }
     }
 

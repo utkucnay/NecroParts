@@ -51,7 +51,7 @@ public class GameManager : Singleton<GameManager>
 
         EventManager.AddEventAction("Start Run", () => gameState = GameState.OnRun);
         EventManager.AddEventAction("End Run", () => gameState = GameState.MainMenu);
-
+        EventManager.AddEventAction("End Run", () => Time.timeScale = 0);
     }
 
     private void Start()
@@ -60,7 +60,10 @@ public class GameManager : Singleton<GameManager>
 
 #if UNITY_EDITOR
         if (forceStart)
+        {
             EventManager.InvokeEvent("Start Run");
+            UIManager.s_Instance.SetUIScene("GameHUD");
+        }
         else
             UIManager.s_Instance.SetUIScene("MainMenu");
 #else   

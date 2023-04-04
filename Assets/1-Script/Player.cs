@@ -28,14 +28,15 @@ public class Player : Unit
     private void Update()
     {
         MoveUpdate();
-        UIUpdate();
         CalculateTargetEnemyPoints();
+        UIUpdate();
     }
 
     void UIUpdate()
     {
-
+        HealthBar.s_Instance.UpdateSlider(health, maxHealth);
     }
+
     void MoveUpdate()
     {
         Vector2 dir = Vector2.zero;
@@ -66,8 +67,13 @@ public class Player : Unit
         targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 9, 20);
     }
 
+    protected override void Damage(float damage)
+    {
+        base.Damage(damage);
+    }
+
     protected override void Death()
     {
-        
+        EventManager.InvokeEvent("End Run");
     }
 }

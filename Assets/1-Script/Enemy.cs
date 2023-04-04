@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         AIManager.s_Instance.RegisterEnemy(this);
     }
 

@@ -136,7 +136,7 @@ public class AIManager : Singleton<AIManager>
         for (int i = 0; i < lenght; i++)
         {
             var skeleton = skeletons.First;
-            Enemies.RemoveFirst();
+            skeletons.RemoveFirst();
             Destroy(skeleton.Value.gameObject);
         }
     }
