@@ -6,6 +6,7 @@ public class Skeleton : Unit
 {
     protected override void OnEnable()
     {
+        maxHealth = GetComponent<SkeletonSM>().sSMConfig.skeletonProp.maxHealth;
         base.OnEnable();
         AIManager.s_Instance.RegisterSkeleton(this);
     }
@@ -17,7 +18,12 @@ public class Skeleton : Unit
 
     private void Update()
     {
-        Damage(10 * Time.deltaTime);
+        Damage(1 * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, Player.s_Instance.transform.position) >= 13f)
+        {
+            Damage(float.MaxValue); 
+        }
     }
 
     protected override void Death()

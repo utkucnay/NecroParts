@@ -48,7 +48,7 @@ public class AttackTargetState : AttackState
             stateMachine.ChangeState(stateMachine.GetState<AttackTargetState>());
         }
 
-        stateMachine.ChangeState(stateMachine.GetState<WaitState>());
+        stateMachine.ChangeState(stateMachine.GetState<AttackWaitState>());
     }
 
     protected override void UpdateState()

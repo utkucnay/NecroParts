@@ -9,7 +9,8 @@ public class SkeletonSM : StateMachine
     public RandomMoveState randomMove;
     public FollowAttackTargetState followAttackTargetState;
     public AttackTargetState attackTargetState;
-    public WaitState waitState;
+    public SpanWaitTime spawnWaitState;
+    public AttackWaitState attackWaitState;
 
     public SkeletonSMConfig sSMConfig;
 
@@ -20,12 +21,14 @@ public class SkeletonSM : StateMachine
         randomMove = new RandomMoveState(this, sSMConfig.randomMoveData);
         followAttackTargetState = new FollowAttackTargetState(this, sSMConfig.attackData, sSMConfig.randomMoveData);
         attackTargetState = new AttackTargetState(this, sSMConfig.attackData);
-        waitState = new WaitState(this, sSMConfig.attackData);
+        spawnWaitState = new SpanWaitTime(this, sSMConfig.skeletonProp);
+        attackWaitState = new AttackWaitState(this, sSMConfig.attackData);
 
         states.Add(randomMove);
         states.Add(followAttackTargetState);
         states.Add(attackTargetState);
-        states.Add(waitState);
+        states.Add(spawnWaitState);
+        states.Add(attackWaitState);
 
         InitAllStates();
     }
@@ -38,7 +41,7 @@ public class SkeletonSM : StateMachine
 
     protected override BaseState GetInitialState()
     {
-        return randomMove;
+        return spawnWaitState;
     }
 
 

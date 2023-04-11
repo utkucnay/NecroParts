@@ -7,4 +7,5 @@ public class SkeletonSMConfig : ScriptableObject
 {
     public AttackData attackData;
     public RandomMoveData randomMoveData;
+    public SkeletonProp skeletonProp;
 }

@@ -2,39 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitState : BaseState
+public class AttackWaitState : WaitState
 {
-    float timer = 0;
-    protected float waitTime;
-    protected BaseState goState;
+    AttackData attackData;
 
-    public WaitState(StateMachine stateMachine) : base(stateMachine)
+    public AttackWaitState(StateMachine stateMachine, AttackData attackData) : base(stateMachine)
     {
+       this.attackData = attackData;
     }
 
     public override void InitState()
     {
         base.InitState();
-        
+        goState = stateMachine.GetState<RandomMoveState>();
     }
 
     protected override void StartState()
     {
         base.StartState();
-        timer = 0;
+        waitTime = attackData.waitTime;
     }
 
     protected override void UpdateState()
     {
         base.UpdateState();
-
-        if (timer >= waitTime)
-        {
-            stateMachine.ChangeState(goState);
-            return;
-        }
-
-        timer += Time.deltaTime;
     }
 
     protected override void OnEnd()

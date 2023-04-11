@@ -28,6 +28,7 @@ public class FollowAttackTargetState : AttackState
     protected override void UpdateState()
     {
         base.UpdateState();
+
         if (IsValidTarget())
         {
             var dir = Vector3.Normalize(targetObject.transform.position - transform.position);
@@ -78,7 +79,7 @@ public class FollowAttackTargetState : AttackState
 
         for (int i = 0; i < length; i++)
         {
-            if (targetPoints[i] > 0)
+            if (playerTargetPoints[i] > 0)
             {
                 targetPoints[i] = targetPoints[i] + playerTargetPoints[i];
             }

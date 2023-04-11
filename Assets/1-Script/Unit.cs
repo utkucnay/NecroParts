@@ -23,12 +23,12 @@ public abstract class Unit : MonoBehaviour
     protected virtual void Start()
     {
         health = maxHealth;
-        death = false;
     }
 
     protected virtual void OnEnable()
     {
         health = maxHealth;
+        death = false;
     }
 
     public void MoveDir(Vector2 velocity)

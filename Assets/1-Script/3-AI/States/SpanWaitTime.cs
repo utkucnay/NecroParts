@@ -2,41 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitState : BaseState
+public class SpanWaitTime : WaitState
 {
-    float timer = 0;
-    protected float waitTime;
-    protected BaseState goState;
+    SkeletonProp skeletonProp;
 
-    public WaitState(StateMachine stateMachine) : base(stateMachine)
+    public SpanWaitTime(StateMachine stateMachine, SkeletonProp skeletonProp) : base(stateMachine)
     {
+        this.skeletonProp = skeletonProp;
     }
 
     public override void InitState()
     {
         base.InitState();
-        
+        goState = stateMachine.GetState<RandomMoveState>();
     }
 
     protected override void StartState()
     {
         base.StartState();
-        timer = 0;
+        waitTime = skeletonProp.afterSpawnTime;
     }
 
     protected override void UpdateState()
     {
         base.UpdateState();
-
-        if (timer >= waitTime)
-        {
-            stateMachine.ChangeState(goState);
-            return;
-        }
-
-        timer += Time.deltaTime;
     }
-
     protected override void OnEnd()
     {
         base.OnEnd();
