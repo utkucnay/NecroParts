@@ -64,6 +64,11 @@ public class AIManager : Singleton<AIManager>
         return Enemies;
     }
 
+    public Enemy[] GetCloseEnemies(int distance, Vector2 pos)
+    {
+        return Enemies.Where(enemy => Vector2.Distance( enemy.transform.position, pos) <= distance).ToArray();
+    }
+
     public Enemy GetEnemy(int index)
     {
         return Enemies.ElementAt(index);
