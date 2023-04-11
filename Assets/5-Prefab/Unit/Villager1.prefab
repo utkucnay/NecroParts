@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 7571025913804648542}
   - component: {fileID: 1215209329}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: Villager1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a420dc592d8eb146bfb0534931ea678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 25
+  damage: 10
 --- !u!54 &1215209329
 Rigidbody:
   m_ObjectHideFlags: 0

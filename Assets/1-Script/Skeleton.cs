@@ -30,6 +30,11 @@ public class Skeleton : Unit
     {
         gameObject.SetActive(false);
         AIManager.s_Instance.DeathSkeleton(this);
+
+
+        var go = Instantiate(AIManager.s_Instance.puffVFX);
+        go.transform.position = transform.position;
+        go.SetActive(true);
     }
 
 }

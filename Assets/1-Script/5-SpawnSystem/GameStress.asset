@@ -21,11 +21,40 @@ MonoBehaviour:
     minSpawnWaitTime: 1
     maxSpawnWaitTime: 1
   - enemyPrefabs:
-    - prefab: {fileID: 7571025913804648541, guid: 7209c7b06d501cf4faf9be4f84fccef4, type: 3}
+    - prefab: {fileID: 2937955384695602300, guid: bf69dbc34b26cfe4e95bb5c824229194, type: 3}
       rarity: 100
     bossPrefabs: []
-    timeSpent: 300
-    minSpawnCount: 4
+    timeSpent: 60
+    minSpawnCount: 2
+    maxSpawnCount: 4
+    minSpawnWaitTime: 2.4
+    maxSpawnWaitTime: 3
+  - enemyPrefabs:
+    - prefab: {fileID: 2937955384695602300, guid: bf69dbc34b26cfe4e95bb5c824229194, type: 3}
+      rarity: 80
+    - prefab: {fileID: 2538981787989713815, guid: ed11d1cf4d8d4744083393f4e1ded7ae, type: 3}
+      rarity: 20
+    bossPrefabs: []
+    timeSpent: 60
+    minSpawnCount: 3
+    maxSpawnCount: 6
+    minSpawnWaitTime: 2.4
+    maxSpawnWaitTime: 3
+  - enemyPrefabs:
+    - prefab: {fileID: 2538981787989713815, guid: ed11d1cf4d8d4744083393f4e1ded7ae, type: 3}
+      rarity: 20
+    bossPrefabs: []
+    timeSpent: 60
+    minSpawnCount: 5
     maxSpawnCount: 7
     minSpawnWaitTime: 1.5
-    maxSpawnWaitTime: 1.5
+    maxSpawnWaitTime: 2.5
+  - enemyPrefabs:
+    - prefab: {fileID: 7571025913804648541, guid: 7209c7b06d501cf4faf9be4f84fccef4, type: 3}
+      rarity: 20
+    bossPrefabs: []
+    timeSpent: 60
+    minSpawnCount: 2
+    maxSpawnCount: 3
+    minSpawnWaitTime: 2.5
+    maxSpawnWaitTime: 3.5

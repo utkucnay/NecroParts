@@ -1,9 +1,13 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Unit
 {
+    public float damage;
+    bool sequacerStart = true;
+    bool lockMove = false;
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -19,11 +23,14 @@ public class Enemy : Unit
     {
         if (CheckDistancePlayer(.6f))
         {
-            Player.s_Instance.DamageMelee(10 * Time.deltaTime, new DamageMeleeData());
+            Player.s_Instance.DamageMelee(damage * Time.deltaTime, new DamageMeleeData());
         }
         else
         {
-            MoveUpdate();
+            if (!lockMove)
+            {
+                MoveUpdate();
+            }
         }
     }
 
@@ -33,6 +40,25 @@ public class Enemy : Unit
         dir = dir.normalized;
         MoveDir(dir * 3);
         RotateDir(dir);
+    }
+
+    protected override void Damage(float damage)
+    {
+        base.Damage(damage);
+        if (sequacerStart)
+        {
+            StartCoroutine(WaitTime(2));
+        }
+
+    }
+
+    IEnumerator WaitTime(float time)
+    {
+        sequacerStart = false;
+        lockMove = true;
+        yield return new WaitForSeconds(time);
+        lockMove = false;
+        sequacerStart = true;
     }
 
     bool CheckDistancePlayer(float minDist)

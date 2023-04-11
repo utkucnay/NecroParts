@@ -52,7 +52,7 @@ public abstract class Unit : MonoBehaviour
     {
         health -= damage;
 
-        if (health < 0 && !death)
+        if (health <= 0 && !death)
         {
             Death();
             death = true;

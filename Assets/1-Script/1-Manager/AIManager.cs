@@ -16,6 +16,8 @@ public class AIManager : Singleton<AIManager>
 
     public LinkedList<int> priorities;
 
+    [SerializeField] public GameObject puffVFX;
+
     public override void Awake()
     {
         base.Awake();
