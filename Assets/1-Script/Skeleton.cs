@@ -20,7 +20,7 @@ public class Skeleton : Unit
     {
         Damage(1 * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, Player.s_Instance.transform.position) >= 13f)
+        if (!Utils.InMainCamera(transform.position))
         {
             Damage(float.MaxValue); 
         }
