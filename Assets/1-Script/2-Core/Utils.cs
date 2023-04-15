@@ -15,20 +15,20 @@ public static class Utils
         return NewValue;
     }
 
-    public static bool InBox(Vector2 pos, Vector2 TopRight, Vector2 BotLeft, float treshold = 0)
+    public static bool InBox(Vector2 pos, Vector2 TopRight, Vector2 BotLeft, float threshold = 0)
     {
-        TopRight += (Vector2.one * treshold);
-        BotLeft -= (Vector2.one * treshold);
+        TopRight += (Vector2.one * threshold);
+        BotLeft -= (Vector2.one * threshold);
         if (pos.x < TopRight.x && pos.x > BotLeft.x && pos.y < TopRight.y && pos.y > BotLeft.y) return true;
         return false;
     }
 
-    public static bool InMainCamera(Vector2 pos)
+    public static bool InMainCamera(Vector2 pos, float threshold = 0)
     {
         return InBox(pos,
             Camera.main.ScreenToWorldPoint(new Vector3(UnityEngine.Screen.width, UnityEngine.Screen.height, -Camera.main.transform.position.z)),
             Camera.main.ScreenToWorldPoint(new Vector3(0, 0, -Camera.main.transform.position.z)),
-            -2f
+            threshold
             );
     }
 }

@@ -7,7 +7,8 @@ public enum GameState : ushort
 {
     MainMenu,
     OnRun,
-    Pause
+    Pause,
+    LevelUp
 }
 
 [DefaultExecutionOrder(-100)]
@@ -35,6 +36,7 @@ public class GameManager : Singleton<GameManager>
 
         EventManager.AddEvent("Start Run");
         EventManager.AddEvent("End Run");
+        EventManager.AddEvent("Levelup Game");
 
         EventManager.AddEventAction("Exit Game", ExitGame);
         EventManager.AddEventAction("Reset Game", () => Time.timeScale = 1);
@@ -42,7 +44,13 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEventAction("Reset Game", () => EventManager.InvokeEvent("End Run"));
         EventManager.AddEventAction("Pause Game", () => Time.timeScale = 0);
         EventManager.AddEventAction("Pause Game", () => UIManager.s_Instance.SetUIScene("PauseMenu"));
+
         EventManager.AddEventAction("Resume Game", () => Time.timeScale = 1);
+        EventManager.AddEventAction("Resume Game", () => gameState = GameState.OnRun);
+
+        EventManager.AddEventAction("Levelup Game", () => Time.timeScale = 0);
+        EventManager.AddEventAction("Levelup Game", () => UIManager.s_Instance.SetUIScene("LevelUpHUD"));
+        EventManager.AddEventAction("Levelup Game", () => gameState = GameState.LevelUp);
 
         EventManager.AddEventAction("Start Game", () => gameState = GameState.MainMenu);
         EventManager.AddEventAction("Resume Game", () => gameState = GameState.OnRun);
@@ -50,6 +58,7 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEventAction("Reset Game", () => gameState = GameState.MainMenu);
 
         EventManager.AddEventAction("Start Run", () => gameState = GameState.OnRun);
+        EventManager.AddEventAction("Start Run", () => Time.timeScale = 1);
         EventManager.AddEventAction("End Run", () => gameState = GameState.MainMenu);
         EventManager.AddEventAction("End Run", () => Time.timeScale = 0);
     }

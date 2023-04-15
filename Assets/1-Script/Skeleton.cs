@@ -20,7 +20,7 @@ public class Skeleton : Unit
     {
         Damage(1 * Time.deltaTime);
 
-        if (!Utils.InMainCamera(transform.position))
+        if (!Utils.InMainCamera(transform.position, -1f))
         {
             Damage(float.MaxValue); 
         }

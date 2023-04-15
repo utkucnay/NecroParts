@@ -13,8 +13,6 @@ public class SoulManager : Singleton<SoulManager>
 
     public GameObject soulObj;
 
-    public GameObject skeleton;
-
     public override void Awake()
     {
         level = 0;
@@ -46,9 +44,7 @@ public class SoulManager : Singleton<SoulManager>
 
     void LevelUp()
     {
-        //EventManager.InvokeEvent("Pause Game");
-        //UIManager.s_Instance.SetUIScene("LevelUpHUD");
-        SpawnManager.s_Instance.SpawnInCamera(skeleton);
+        EventManager.InvokeEvent("Levelup Game");
         level++;
         soul = 0;
     }

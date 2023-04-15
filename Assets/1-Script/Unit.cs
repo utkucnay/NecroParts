@@ -48,6 +48,11 @@ public abstract class Unit : MonoBehaviour
         Damage(damage);
     }
 
+    public void DamageProjectile(float damage, DamageProjectileData damageMeleeData)
+    {
+        Damage(damage);
+    }
+
     protected virtual void Damage(float damage)
     {
         health -= damage;
@@ -66,4 +71,11 @@ public abstract class Unit : MonoBehaviour
 public struct DamageMeleeData
 {
     public Vector3 meleePos;
+}
+
+
+public struct DamageProjectileData
+{
+    public Vector3 projectilePos;
+    public Vector3 moveDir;
 }

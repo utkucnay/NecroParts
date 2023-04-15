@@ -12,7 +12,7 @@ public struct MeleeGFXData
     public float time;
 }
 
-public class MeleeVFX : MonoBehaviour
+public class MeleeVFX : VFX
 {
     [SerializeField] GameObject GFX;
     MeleeGFXData meleeGFXData;
@@ -26,8 +26,6 @@ public class MeleeVFX : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, .75f);
-
         var angle = Vector2.SignedAngle(meleeGFXData.baseDir, meleeGFXData.targetDir);
         GFX.transform.localEulerAngles += new Vector3(0, 0, angle);
     }

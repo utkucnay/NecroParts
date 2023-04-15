@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ac65c284bb4d94aafc967058cd0365, type: 3}
+  m_Name: ArcherSkeleton
+  m_EditorClassIdentifier: 
+  attackData:
+    attackType: 0
+    attackVFX: {fileID: 7427112891804491549, guid: 5782f0fa92f72d744aca9a734473cf69, type: 3}
+    waitTime: 3
+    attackInRange: 6
+    damage: 10
+    attackSpeed: 15
+    scaleAttackBegin: 0
+    time: 0
+  randomMoveData:
+    attackTarget: 1
+    attackRange: 8
+    moveRangeMax: 8
+    moveRangeMin: 5
+    speed: 6
+  skeletonProp:
+    maxHealth: 10
+    afterSpawnTime: 1
