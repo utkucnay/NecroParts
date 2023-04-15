@@ -41,7 +41,7 @@ public class AttackTargetState : AttackState
             }
             //CommandStream.s_Instance.sequencer.AddCommand(new RotateCommand(targetPos, stateMachine.VFX));
             skeleton.RotateDir(targetPos);
-
+            skeleton.MoveDir(Vector2.zero);
         }
         else
         {
@@ -66,12 +66,12 @@ public class AttackTargetState : AttackState
 
     void RangedAttack(GameObject VFXObj)
     {
-        /*Vector3 dir = targetObject.transform.position - transform.position;
+        Vector3 dir = targetObject.transform.position - transform.position;
         dir = dir.normalized;
 
         var projectile = VFXObj.GetComponent<Projectile>();
         projectile.SetProjetileData(new ProjectileData() { damage = (int)(attackData.damage), dir = dir, speed = attackData.attackSpeed });
-        VFXObj.SetActive(true);*/
+        VFXObj.SetActive(true);
     }
 
     void MeleeAttack(GameObject slashObj, Vector3 targetPos)

@@ -58,7 +58,7 @@ public class RandomMoveState : BaseState
         var dir = Vector2.up;
         dir.Rotate(Random.Range(0, 360));
         loc = player.transform.position + (Vector3)(dir * Random.Range(randomMoveData.moveRangeMin, randomMoveData.moveRangeMax));
-        loc = loc.normalized * Random.Range(3,7);
+        //loc = loc.normalized * Random.Range(3,7);
     }
     void GoToLocation()
     {
@@ -111,7 +111,7 @@ public class RandomMoveState : BaseState
 
         for (int i = 0; i < length; i++)
         {
-            if (targetPoints[i] > 0)
+            if (playerTargetPoints[i] > 0)
             {
                 targetPoints[i] = targetPoints[i] + playerTargetPoints[i];
             }

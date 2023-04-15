@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a80a36b06064574dbfe37fde174de87, type: 3}
+  m_Name: SkeletonData
+  m_EditorClassIdentifier: 
+  skeletons:
+  - skeletonName: Warrior
+    skeletonDescribe: Raise a Warrior
+    icon: {fileID: 463804724, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 0
+    prefab: {fileID: 730371803975196639, guid: a791aa08876541b459553c9893960849, type: 3}
+  - skeletonName: Doube Sword
+    skeletonDescribe: Raise a Double Sword
+    icon: {fileID: 1193054896, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 0
+    prefab: {fileID: 3404406318108195348, guid: adb350e899ef6d9419e61df7433a3b71, type: 3}
+  - skeletonName: Monk
+    skeletonDescribe: Raise a Monk
+    icon: {fileID: -49342820, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 0
+    prefab: {fileID: 6055268722721565915, guid: 57fcbd09d2f000a44888951fa030452e, type: 3}
+  - skeletonName: Archer
+    skeletonDescribe: Raise a Archer
+    icon: {fileID: -508076298, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 1
+    prefab: {fileID: 2855472759581634061, guid: bac2baee5d8078c4bb783a766e3114c4, type: 3}
+  - skeletonName: Crossbow
+    skeletonDescribe: Raise a Crossbow
+    icon: {fileID: 761395521, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 1
+    prefab: {fileID: 1271674974789253717, guid: 06f29e3417a3d5a49b17f246ce6fa594, type: 3}
+  - skeletonName: Sorcerer
+    skeletonDescribe: Raise a Sorcerer
+    icon: {fileID: 390916402, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 1
+    prefab: {fileID: 5111560695291136222, guid: eaed23ca607922a48af247cf098ebab5, type: 3}
+  - skeletonName: Knight
+    skeletonDescribe: Raise a Knight
+    icon: {fileID: -2564477, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 2
+    prefab: {fileID: 8705779778873837600, guid: 8beb70d9092ea324a93153cedc9b061c, type: 3}
+  - skeletonName: Mace
+    skeletonDescribe: Raise a Mace
+    icon: {fileID: -338766312, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
+    skeletonType: 2
+    prefab: {fileID: 2224794638021976829, guid: 929a72cfe180b8441a81214e544bba5e, type: 3}
+  meleeButtonImage: {fileID: 21300000, guid: 041839ab9371fbf4bbeb22d7ddf78ec7, type: 3}
+  rangedButtonImage: {fileID: 21300000, guid: a902c769fcb0a6745a8c45ff2e1ae34c, type: 3}
+  tankButtonImage: {fileID: 21300000, guid: 143887ba6c5d772459cfe89ccd3dfcb8, type: 3}
+  supportButtonImage: {fileID: 0}

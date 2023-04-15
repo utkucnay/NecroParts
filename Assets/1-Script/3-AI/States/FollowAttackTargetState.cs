@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
@@ -65,6 +66,10 @@ public class FollowAttackTargetState : AttackState
         if (index != -1)
         {
             targetObject = AIManager.s_Instance.GetEnemy(index).gameObject;
+        }
+        else
+        {
+            stateMachine.ChangeState(stateMachine.GetState<RandomMoveState>());
         }
     }
 
