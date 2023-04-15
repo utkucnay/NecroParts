@@ -5774,6 +5774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puffVFX: {fileID: 8006543486757190278, guid: a03b5e12f3929c44caa411044c284023, type: 3}
+  bones: {fileID: 2925779313328240347, guid: 4f7fbabc1e0aa234a8e2d3fb04322ec3, type: 3}
 --- !u!114 &958756902
 MonoBehaviour:
   m_ObjectHideFlags: 0

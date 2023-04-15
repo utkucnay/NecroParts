@@ -17,6 +17,7 @@ public class AIManager : Singleton<AIManager>
     public LinkedList<int> priorities;
 
     [SerializeField] public GameObject puffVFX;
+    [SerializeField] public GameObject bones;
 
     public override void Awake()
     {
@@ -93,10 +94,18 @@ public class AIManager : Singleton<AIManager>
 
     public void SpawnSkeleton(Vector3 pos)
     {
-        if (deathSkeletons.Count <= 0) return;
-        var skeleton =  deathSkeletons.Dequeue();
-        skeleton.gameObject.transform.position = pos;
-        skeleton.gameObject.SetActive(true);
+        if (deathSkeletons.Count <= 0) 
+        {
+            var treshBone = Instantiate(bones);
+            treshBone.gameObject.transform.position = pos;
+            treshBone.gameObject.SetActive(true);
+        }
+        else
+        {
+            var skeleton = deathSkeletons.Dequeue();
+            skeleton.gameObject.transform.position = pos;
+            skeleton.gameObject.SetActive(true);
+        }
     }
 
     public LinkedList<Skeleton> GetSkeletons()
