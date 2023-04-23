@@ -61,6 +61,8 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEventAction("Start Run", () => Time.timeScale = 1);
         EventManager.AddEventAction("End Run", () => gameState = GameState.MainMenu);
         EventManager.AddEventAction("End Run", () => Time.timeScale = 0);
+
+        SkeletonUIData.instance.Setup();
     }
 
     private void Start()
@@ -92,6 +94,11 @@ public class GameManager : Singleton<GameManager>
     private void LateUpdate()
     {
         CommandStream.ExecuteCommands();
+    }
+
+    void OnDestroy()
+    {
+        SkeletonUIData.instance.ResetSekeleton();
     }
 
     public void ExitGame()

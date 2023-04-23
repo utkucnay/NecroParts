@@ -6,7 +6,9 @@ public class StateMachine : MonoBehaviour
 {
     BaseState currentState;
 
-     protected List<BaseState> states;
+    protected List<BaseState> states;
+
+    public SMConfig config;
 
     protected virtual void Awake()
     {
@@ -58,7 +60,7 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
-    public List<T> GetStates<T>() where T : BaseState
+    public T[] GetStates<T>() where T : BaseState
     {
         List<T> states = new List<T>();
 
@@ -70,6 +72,11 @@ public class StateMachine : MonoBehaviour
             }
         }
 
-        return states;
+        return states.ToArray();
+    }
+
+    public T GetData<T>(string name) where T : class
+    {
+        return config.GetType().GetField(name).GetValue(config) as T;
     }
 }

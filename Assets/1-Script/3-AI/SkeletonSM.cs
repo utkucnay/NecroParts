@@ -12,17 +12,15 @@ public class SkeletonSM : StateMachine
     public SpanWaitTime spawnWaitState;
     public AttackWaitState attackWaitState;
 
-    public SkeletonSMConfig sSMConfig;
-
     protected override void Awake()
     {
         base.Awake();
 
-        randomMove = new RandomMoveState(this, sSMConfig.randomMoveData);
-        followAttackTargetState = new FollowAttackTargetState(this, sSMConfig.attackData, sSMConfig.randomMoveData);
-        attackTargetState = new AttackTargetState(this, sSMConfig.attackData);
-        spawnWaitState = new SpanWaitTime(this, sSMConfig.skeletonProp);
-        attackWaitState = new AttackWaitState(this, sSMConfig.attackData);
+        randomMove = new RandomMoveState(this);
+        followAttackTargetState = new FollowAttackTargetState(this);
+        attackTargetState = new AttackTargetState(this);
+        spawnWaitState = new SpanWaitTime(this);
+        attackWaitState = new AttackWaitState(this);
 
         states.Add(randomMove);
         states.Add(followAttackTargetState);

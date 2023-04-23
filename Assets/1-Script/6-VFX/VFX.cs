@@ -8,6 +8,7 @@ public class VFX : MonoBehaviour
 
     void OnEnable()
     {
-        Destroy(gameObject, GetComponentInChildren<Animator>().GetCurrentAnimatorClipInfo(0).Length);
+        float length = GetComponentInChildren<Animator>().GetCurrentAnimatorClipInfo(0).LongLength;
+        Destroy(gameObject, length);
     }
 }

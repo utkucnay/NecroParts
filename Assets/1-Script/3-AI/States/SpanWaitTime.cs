@@ -6,9 +6,9 @@ public class SpanWaitTime : WaitState
 {
     SkeletonProp skeletonProp;
 
-    public SpanWaitTime(StateMachine stateMachine, SkeletonProp skeletonProp) : base(stateMachine)
+    public SpanWaitTime(StateMachine stateMachine) : base(stateMachine)
     {
-        this.skeletonProp = skeletonProp;
+        skeletonProp = stateMachine.GetData<SkeletonProp>("skeletonProp");
     }
 
     public override void InitState()

@@ -13,6 +13,7 @@ public class Bone : MonoBehaviour
             var vfx = Instantiate(AIManager.s_Instance.puffVFX);
             vfx.transform.position = transform.position;
             vfx.SetActive(true);
+
             Destroy(gameObject);
         }
         timer += Time.deltaTime;

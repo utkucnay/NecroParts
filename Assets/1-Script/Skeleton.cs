@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Skeleton : Unit
 {
     protected override void OnEnable()
     {
-        maxHealth = GetComponent<SkeletonSM>().sSMConfig.skeletonProp.maxHealth;
+        maxHealth = GetComponent<SkeletonSM>().GetData<SkeletonProp>("skeletonProp").maxHealth * GetComponent<SkeletonSM>().GetData<SkeletonMultipler>("skeletonMultipler").lifeMultipler;
         base.OnEnable();
         AIManager.s_Instance.RegisterSkeleton(this);
     }

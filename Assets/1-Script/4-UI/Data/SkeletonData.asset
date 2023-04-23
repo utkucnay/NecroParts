@@ -17,43 +17,752 @@ MonoBehaviour:
     skeletonDescribe: Raise a Warrior
     icon: {fileID: 463804724, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 0
+    skeletonSMConfig: {fileID: 11400000, guid: 77c1cd264b2564d4aa4d6dbbb8cd371a, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 730371803975196639, guid: a791aa08876541b459553c9893960849, type: 3}
-  - skeletonName: Doube Sword
+  - skeletonName: Double Sword
     skeletonDescribe: Raise a Double Sword
     icon: {fileID: 1193054896, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 0
+    skeletonSMConfig: {fileID: 11400000, guid: 9eb69b041c445bc42a3a5e0bf23d2059, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 3404406318108195348, guid: adb350e899ef6d9419e61df7433a3b71, type: 3}
   - skeletonName: Monk
     skeletonDescribe: Raise a Monk
     icon: {fileID: -49342820, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 0
+    skeletonSMConfig: {fileID: 11400000, guid: 924ef28fcff774f47b8740cdad965539, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 6055268722721565915, guid: 57fcbd09d2f000a44888951fa030452e, type: 3}
   - skeletonName: Archer
     skeletonDescribe: Raise a Archer
     icon: {fileID: -508076298, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 1
+    skeletonSMConfig: {fileID: 11400000, guid: 1ada450c28ee0434f87972ad04728e07, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 2855472759581634061, guid: bac2baee5d8078c4bb783a766e3114c4, type: 3}
   - skeletonName: Crossbow
     skeletonDescribe: Raise a Crossbow
     icon: {fileID: 761395521, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 1
+    skeletonSMConfig: {fileID: 11400000, guid: cc3e3f1a0d7737e4eb74d044dcd7fca2, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 1271674974789253717, guid: 06f29e3417a3d5a49b17f246ce6fa594, type: 3}
   - skeletonName: Sorcerer
     skeletonDescribe: Raise a Sorcerer
     icon: {fileID: 390916402, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 1
+    skeletonSMConfig: {fileID: 11400000, guid: a28d170051ee49e409c9c5705037f1ee, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 5111560695291136222, guid: eaed23ca607922a48af247cf098ebab5, type: 3}
   - skeletonName: Knight
     skeletonDescribe: Raise a Knight
     icon: {fileID: -2564477, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 2
+    skeletonSMConfig: {fileID: 11400000, guid: c4e10871e49f5bb41a86ce7f179de1d7, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 8705779778873837600, guid: 8beb70d9092ea324a93153cedc9b061c, type: 3}
   - skeletonName: Mace
     skeletonDescribe: Raise a Mace
     icon: {fileID: -338766312, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 2
+    skeletonSMConfig: {fileID: 11400000, guid: 93dd1e0c73541c647ae9327dd0447cae, type: 2}
+    upgradeCount: 0
+    upgradeLimit: 0
+    skeletonUpgradeUIs: []
     prefab: {fileID: 2224794638021976829, guid: 929a72cfe180b8441a81214e544bba5e, type: 3}
+  skeletonUpgrades:
+  - skeletonName: Warrior
+    upgradeName: Upgrade Warrior
+    upgradeDescribe: Attack increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Warrior
+    upgradeName: Upgrade Warrior
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Warrior
+    upgradeName: Upgrade Warrior
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Warrior
+    upgradeName: Upgrade Warrior
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Double Sword
+    upgradeName: Upgrade DoubleSword
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Double Sword
+    upgradeName: Upgrade DoubleSword
+    upgradeDescribe: Damage increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Double Sword
+    upgradeName: Upgrade DoubleSword
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Double Sword
+    upgradeName: Upgrade DoubleSword
+    upgradeDescribe: Attack Speed  increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Monk
+    upgradeName: Upgrade Monk
+    upgradeDescribe: Attack Speed  increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Monk
+    upgradeName: Upgrade Monk
+    upgradeDescribe: Damage  increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Monk
+    upgradeName: Upgrade Monk
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Monk
+    upgradeName: Upgrade Monk
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Archer
+    upgradeName: Upgrade Archer
+    upgradeDescribe: Damage increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Archer
+    upgradeName: Upgrade Archer
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Archer
+    upgradeName: Upgrade Archer
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Archer
+    upgradeName: Upgrade Archer
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Crossbow
+    upgradeName: Upgrade Crossbow
+    upgradeDescribe: Damage increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Crossbow
+    upgradeName: Upgrade Crossbow
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Crossbow
+    upgradeName: Upgrade Crossbow
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Crossbow
+    upgradeName: Upgrade Crossbow
+    upgradeDescribe: Life Time  increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Sorcerer
+    upgradeName: Upgrade Sorcerer
+    upgradeDescribe: Damage  increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Sorcerer
+    upgradeName: Upgrade Sorcerer
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Sorcerer
+    upgradeName: Upgrade Sorcerer
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Sorcerer
+    upgradeName: Upgrade Sorcerer
+    upgradeDescribe: Life Time  increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Knight
+    upgradeName: Upgrade Knight
+    upgradeDescribe: Damge increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Knight
+    upgradeName: Upgrade Knight
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Knight
+    upgradeName: Upgrade Knight
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Knight
+    upgradeName: Upgrade Knight
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Mace
+    upgradeName: Upgrade Mace
+    upgradeDescribe: Damage increase %10
+    upgradeValue: 0.1
+    upgradeType: 0
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Mace
+    upgradeName: Upgrade Mace
+    upgradeDescribe: Attack Range increase %10
+    upgradeValue: 0.1
+    upgradeType: 1
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Mace
+    upgradeName: Upgrade Mace
+    upgradeDescribe: Attack Speed increase %10
+    upgradeValue: 0.1
+    upgradeType: 2
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - skeletonName: Mace
+    upgradeName: Upgrade Mace
+    upgradeDescribe: Life Time increase %10
+    upgradeValue: 0.1
+    upgradeType: 3
+    upgradeRarity: 0
+    OnClick:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_TargetAssemblyTypeName: SkeletonUIData, Assembly-CSharp
+          m_MethodName: Setup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   meleeButtonImage: {fileID: 21300000, guid: 041839ab9371fbf4bbeb22d7ddf78ec7, type: 3}
   rangedButtonImage: {fileID: 21300000, guid: a902c769fcb0a6745a8c45ff2e1ae34c, type: 3}
   tankButtonImage: {fileID: 21300000, guid: 143887ba6c5d772459cfe89ccd3dfcb8, type: 3}
-  supportButtonImage: {fileID: 0}
+  supportButtonImage: {fileID: 21300000, guid: 7df6ff7828505f640927f52b08eb5513, type: 3}
+  UncommonButtonImage: {fileID: 21300000, guid: 0cb2b0924346c9249b6ed3171086e663, type: 3}
+  rareButtonImage: {fileID: 21300000, guid: aa51704faa55bfb408916b6c6573de12, type: 3}
+  epicButtonImage: {fileID: 21300000, guid: 07df3a4db1f62c546b2125b43eff34b0, type: 3}
+  legandaryButtonImage: {fileID: 21300000, guid: 1f46a8321feef60449d8a8e22d2e1ece, type: 3}

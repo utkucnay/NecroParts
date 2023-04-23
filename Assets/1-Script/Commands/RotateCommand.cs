@@ -12,6 +12,7 @@ public class RotateCommand : ICommand
 
     public void Execute()
     {
+        if (_spriteRenderer == null) return;
         if(_dir.x > 0)
         {
             _spriteRenderer.flipX = true;

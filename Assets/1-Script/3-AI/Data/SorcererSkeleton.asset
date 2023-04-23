@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88ac65c284bb4d94aafc967058cd0365, type: 3}
-  m_Name: SorcurerSkeleton
+  m_Name: SorcererSkeleton
   m_EditorClassIdentifier: 
   attackData:
     attackType: 0

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a282d45a4def3f41bec18e373a25078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sSMConfig: {fileID: 11400000, guid: a28d170051ee49e409c9c5705037f1ee, type: 2}
+  config: {fileID: 11400000, guid: a28d170051ee49e409c9c5705037f1ee, type: 2}
 --- !u!54 &5534119200795699595
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
+    protected Material material;
+
     MoveCommandTransform moveCommandTransform;
     RotateCommand rotateCommand;
 
@@ -16,6 +18,7 @@ public abstract class Unit : MonoBehaviour
     protected virtual void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        material = spriteRenderer.material;
         moveCommandTransform = new MoveCommandTransform(transform, Vector2.zero);
         rotateCommand = new RotateCommand(spriteRenderer, Vector2.zero);
     }

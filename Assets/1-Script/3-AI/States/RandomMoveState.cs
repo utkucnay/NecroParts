@@ -17,9 +17,9 @@ public class RandomMoveState : BaseState
     Skeleton skeleton;
     GameObject player;
 
-    public RandomMoveState(StateMachine stateMachine, RandomMoveData randomMoveData) : base(stateMachine)
+    public RandomMoveState(StateMachine stateMachine) : base(stateMachine)
     {
-        this.randomMoveData = randomMoveData;
+        randomMoveData = stateMachine.GetData<RandomMoveData>("randomMoveData");
     }
 
     public override void InitState()

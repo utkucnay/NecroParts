@@ -7,7 +7,7 @@ public class ButtonEventHandler : MonoBehaviour
 {
     [SerializeField] string eventName;
 
-    private void Awake()
+    private void OnEnable()
     {
         GetComponent<Button>().onClick.AddListener(() => EventManager.InvokeEvent(eventName));
     }

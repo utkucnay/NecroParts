@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackWaitState : WaitState
 {
     AttackData attackData;
+    SkeletonMultipler skeletonMultipler;
 
-    public AttackWaitState(StateMachine stateMachine, AttackData attackData) : base(stateMachine)
+    public AttackWaitState(StateMachine stateMachine) : base(stateMachine)
     {
-       this.attackData = attackData;
+        attackData = stateMachine.GetData<AttackData>("attackData");
+        skeletonMultipler = stateMachine.GetData<SkeletonMultipler>("skeletonMultipler");
     }
 
     public override void InitState()
@@ -20,7 +23,7 @@ public class AttackWaitState : WaitState
     protected override void StartState()
     {
         base.StartState();
-        waitTime = attackData.waitTime;
+        waitTime = attackData.waitTime * skeletonMultipler.attackSpeedMultipler;
     }
 
     protected override void UpdateState()

@@ -56,7 +56,9 @@ public class Enemy : Unit
     {
         sequacerStart = false;
         lockMove = true;
+        material.SetFloat("_LerpDamage", .75f);
         yield return new WaitForSeconds(time);
+        material.SetFloat("_LerpDamage", 0);
         lockMove = false;
         sequacerStart = true;
     }

@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class AttackState : BaseState
 {
     protected AttackData attackData;
+    protected SkeletonMultipler multipler;
 
     public GameObject targetObject;
 
-    public AttackState(StateMachine stateMachine, AttackData attackData) : base(stateMachine)
+    public AttackState(StateMachine stateMachine) : base(stateMachine)
     {
-        this.attackData = attackData;
+        attackData = stateMachine.GetData<AttackData>("attackData");
+        multipler = stateMachine.GetData<SkeletonMultipler>("skeletonMultipler");
     }
 
     protected override void StartState()

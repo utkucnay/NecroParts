@@ -9,7 +9,7 @@ public class UIButtonChangeScene : MonoBehaviour
     [SerializeField] string UIName;
     [SerializeField] bool allMenuClose = true;
 
-    private void Awake()
+    private void OnEnable()
     {
         GetComponent<Button>().onClick.AddListener(() => UIManager.s_Instance.SetUIScene(UIName, allMenuClose));
     }

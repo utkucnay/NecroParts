@@ -7,7 +7,7 @@ public class AttackTargetState : AttackState
 {
     Skeleton skeleton;
 
-    public AttackTargetState(StateMachine stateMachine, AttackData attackData) : base(stateMachine, attackData)
+    public AttackTargetState(StateMachine stateMachine) : base(stateMachine)
     {
     }
 
@@ -70,7 +70,7 @@ public class AttackTargetState : AttackState
         dir = dir.normalized;
 
         var projectile = VFXObj.GetComponent<Projectile>();
-        projectile.SetProjetileData(new ProjectileData() { damage = (int)(attackData.damage), dir = dir, speed = attackData.attackSpeed });
+        projectile.SetProjetileData(new ProjectileData() { damage = (int)(attackData.damage * multipler.damageMultipler), dir = dir, speed = attackData.attackSpeed });
         VFXObj.SetActive(true);
     }
 
@@ -87,7 +87,7 @@ public class AttackTargetState : AttackState
         }
 
         var meleeData = slashObj.GetComponent<AttackSlash>();
-        meleeData.damage = (int)(attackData.damage);
+        meleeData.damage = (int)(attackData.damage * multipler.damageMultipler);
         meleeData.SetPos(transform.position);
 
         var meleeGFX = slashObj.GetComponent<MeleeVFX>();

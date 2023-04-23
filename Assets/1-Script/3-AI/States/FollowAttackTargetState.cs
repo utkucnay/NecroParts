@@ -10,9 +10,9 @@ public class FollowAttackTargetState : AttackState
     RandomMoveData randomMoveData;
     Skeleton skeleton;
 
-    public FollowAttackTargetState(StateMachine stateMachine, AttackData attackData, RandomMoveData randomMoveData) : base(stateMachine, attackData)
+    public FollowAttackTargetState(StateMachine stateMachine) : base(stateMachine)
     {
-        this.randomMoveData = randomMoveData;
+        randomMoveData = stateMachine.GetData<RandomMoveData>("randomMoveData");
     }
 
     public override void InitState()
@@ -38,7 +38,7 @@ public class FollowAttackTargetState : AttackState
             skeleton.MoveDir(dir * randomMoveData.speed);
             skeleton.RotateDir(dir);
 
-            if (Vector2.Distance(targetObject.transform.position, transform.position) <= attackData.attackInRange)
+            if (Vector2.Distance(targetObject.transform.position, transform.position) <= attackData.attackInRange * multipler.attackRangeMultipler)
             {
                 stateMachine.GetState<AttackTargetState>().targetObject = targetObject;
                 stateMachine.ChangeState(stateMachine.GetState<AttackTargetState>());
