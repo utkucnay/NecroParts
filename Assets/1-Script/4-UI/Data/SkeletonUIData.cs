@@ -85,7 +85,7 @@ public class SkeletonUpgradeUI
 }
 
 [CreateAssetMenu(fileName = "SkeletonData", menuName = "CardData/Skeleton", order = 1)]
-public class SkeletonUIData : ScriptableSingleton<SkeletonUIData>
+public class SkeletonUIData : ScriptableObject
 {
     public SkeletonUI[] skeletons;
     public SkeletonUpgradeUI[] skeletonUpgrades;
@@ -101,6 +101,17 @@ public class SkeletonUIData : ScriptableSingleton<SkeletonUIData>
     public Sprite rareButtonImage;
     public Sprite epicButtonImage;
     public Sprite legandaryButtonImage;
+
+    public static SkeletonUIData instance;
+
+    public SkeletonUIData()
+    {
+        instance = this;
+    }
+
+    void Awake()
+    {
+    }
 
     public Sprite GetButtonImage(SkeletonUI.SkeletonType skeletonType)
     {

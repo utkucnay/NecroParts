@@ -18,4 +18,10 @@ public class Bone : MonoBehaviour
         }
         timer += Time.deltaTime;
     }
+
+    private void OnDestroy()
+    {
+        if(Random.value < .7f)
+            SoulManager.s_Instance.SoulSpawn(transform.position);
+    }
 }

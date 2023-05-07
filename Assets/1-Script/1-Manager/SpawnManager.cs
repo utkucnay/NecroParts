@@ -120,7 +120,7 @@ public class SpawnManager : Singleton<SpawnManager>
         return dir + (Vector2)camera.transform.position;
     }
 
-    public void SpawnOutCamera(GameObject gameObject)
+    public GameObject SpawnOutCamera(GameObject gameObject)
     {
         var dir = Vector2.up;
         dir.Rotate(Random.Range(0, 360));
@@ -130,6 +130,17 @@ public class SpawnManager : Singleton<SpawnManager>
 
         var agent = Instantiate(gameObject);
         agent.transform.position = GameManager.Translate3D(position);
+
+        return agent;
+    }
+
+    public Vector3 PosOutCamera()
+    {
+        var dir = Vector2.up;
+        dir.Rotate(Random.Range(0, 360));
+        dir *= 19f;
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+        return GameManager.Translate3D(dir + (Vector2)camera.transform.position);
     }
 
     GameObject CalculateRarity()

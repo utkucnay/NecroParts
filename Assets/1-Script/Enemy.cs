@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ using UnityEngine;
 public class Enemy : Unit
 {
     public float damage;
-    bool sequacerStart = true;
     bool lockMove = false;
+    private float damageTime;
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -32,6 +34,23 @@ public class Enemy : Unit
                 MoveUpdate();
             }
         }
+
+        OnDamage();
+    }
+
+    private void OnDamage()
+    {
+        if (damageTime > Time.time)
+        {
+            lockMove = true;
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(1.25f, 1.15f, 0, .7f, damageTime - Time.time), 0, .7f));
+            MoveDir(Vector2.zero);
+        }
+        else
+        {
+            lockMove = false;
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTime), 0, .7f));
+        }
     }
 
     void MoveUpdate()
@@ -45,22 +64,7 @@ public class Enemy : Unit
     protected override void Damage(float damage)
     {
         base.Damage(damage);
-        if (sequacerStart)
-        {
-            StartCoroutine(WaitTime(2));
-        }
-
-    }
-
-    IEnumerator WaitTime(float time)
-    {
-        sequacerStart = false;
-        lockMove = true;
-        material.SetFloat("_LerpDamage", .75f);
-        yield return new WaitForSeconds(time);
-        material.SetFloat("_LerpDamage", 0);
-        lockMove = false;
-        sequacerStart = true;
+        damageTime = Time.time + 1.25f;
     }
 
     bool CheckDistancePlayer(float minDist)
@@ -70,7 +74,6 @@ public class Enemy : Unit
     protected override void Death()
     {
         Destroy(gameObject);
-        SoulManager.s_Instance.SoulSpawn(transform.position);
         AIManager.s_Instance.SpawnSkeleton(transform.position);
     }
 }

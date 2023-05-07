@@ -28,7 +28,7 @@ public class PlayerWeapons : MonoBehaviour
 
     public void AddWeapon()
     {
-        weapons.AddLast(new ThunderWeapon(2, 10, 3, thunderWeaponObj));
+        weapons.AddLast(new ThunderWeapon(2.75f, 20, 4, thunderWeaponObj));
     }
 }
  

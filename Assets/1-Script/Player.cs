@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class Player : Unit
     [SerializeField] float speed;
     [HideInInspector] public int[] targetEnemyPoints;
 
+    float damageTime;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,6 +21,8 @@ public class Player : Unit
             s_Instance = this;
         else
             Destroy(this);
+
+        material.SetTexture("_WhiteTexture", Texture2D.redTexture);
 
         EventManager.AddEventAction("Start Game", () => gameObject.SetActive(false));
 
@@ -30,6 +35,7 @@ public class Player : Unit
         MoveUpdate();
         CalculateTargetEnemyPoints();
         UIUpdate();
+        OnDamage();
     }
 
     void UIUpdate()
@@ -66,10 +72,23 @@ public class Player : Unit
     {
         targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 9, 20);
     }
+    void OnDamage()
+    {
+        if (damageTime > Time.time)
+        {
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(.5f,.4f,0,.7f, damageTime - Time.time), 0, .7f));
+        }
+        else
+        {
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTime), 0, .7f));
+        }
+    }
+
 
     protected override void Damage(float damage)
     {
         base.Damage(damage);
+        damageTime = Time.time + .5f;
     }
 
     protected override void Death()

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  damage: 2
+  damage: 10
 --- !u!54 &4743444000794399568
 Rigidbody:
   m_ObjectHideFlags: 0
