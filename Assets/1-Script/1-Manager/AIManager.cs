@@ -125,6 +125,10 @@ public class AIManager : Singleton<AIManager>
         foreach (var enemy in GetEnemies())
         {
             var dist = Vector2.Distance(enemy.transform.position, pos);
+            if(!Utils.InMainCamera(enemy.transform.position, -1f)){ 
+                targetPoints.Add(0);
+                continue;
+                }
             if (dist < maxDistance)
             {
                 targetPoints.Add((int)Utils.Scale(0, 9, scale, 0, dist));

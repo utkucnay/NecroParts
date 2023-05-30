@@ -50,7 +50,7 @@ public class FollowAttackTargetState : AttackState
         }
 
 
-        var targetPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, randomMoveData.attackRange, 10);
+        var targetPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, randomMoveData.attackRange, 20);
         CalculateTargetPoints(targetPoints, Player.s_Instance.targetEnemyPoints);
         int maxValue = int.MinValue, index = -1;
 

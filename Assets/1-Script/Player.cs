@@ -11,7 +11,8 @@ public class Player : Unit
     [SerializeField] float speed;
     [HideInInspector] public int[] targetEnemyPoints;
 
-    float damageTime;
+    float damageTimeBegin;
+    float damageTimeEnd;
 
     protected override void Awake()
     {
@@ -70,17 +71,17 @@ public class Player : Unit
     }
     void CalculateTargetEnemyPoints()
     {
-        targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 9, 20);
+        targetEnemyPoints = AIManager.s_Instance.CalculateTargetPointsForPos(transform.position, 200, 5);
     }
     void OnDamage()
     {
-        if (damageTime > Time.time)
+        if (damageTimeEnd > Time.time)
         {
-            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(.5f,.4f,0,.7f, damageTime - Time.time), 0, .7f));
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(.5f,.4f,0,.7f, damageTimeBegin - Time.time), 0, .7f));
         }
         else
         {
-            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTime), 0, .7f));
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTimeEnd), 0, .7f));
         }
     }
 
@@ -88,7 +89,10 @@ public class Player : Unit
     protected override void Damage(float damage)
     {
         base.Damage(damage);
-        damageTime = Time.time + .5f;
+
+        if(damageTimeEnd > Time.time)
+            damageTimeBegin = Time.time;
+        damageTimeEnd = Time.time + .5f;
     }
 
     protected override void Death()

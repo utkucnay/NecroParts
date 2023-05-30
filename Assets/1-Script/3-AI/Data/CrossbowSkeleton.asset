@@ -26,7 +26,7 @@ MonoBehaviour:
     attackRange: 9
     moveRangeMax: 5
     moveRangeMin: 4
-    speed: 3
+    speed: 4
   skeletonProp:
     maxHealth: 15
     afterSpawnTime: 1
