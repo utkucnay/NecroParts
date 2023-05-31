@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!1 &60329077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!114 &145464066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3181,7 +3181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!1 &480635490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!114 &532122679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4275,7 +4275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,7 +5464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!1 &855100644
 GameObject:
   m_ObjectHideFlags: 0
@@ -9993,7 +9993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!114 &1735867883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11140,7 +11140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4502a0b9540fafd4da8dcd7e3febacac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: Resume Game
+  eventName: Close Levelup Game
 --- !u!114 &1858241655
 MonoBehaviour:
   m_ObjectHideFlags: 0

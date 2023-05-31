@@ -7,6 +7,7 @@ public class SoulManager : Singleton<SoulManager>
     [SerializeField] int reqSoul;
     public int level;
     public int soul;
+    private int soulOverflow;
     public float reqSoulMultipler;
 
     public int ReqSoul { get { return (int)(reqSoul + level * reqSoulMultipler); } }         
@@ -19,6 +20,7 @@ public class SoulManager : Singleton<SoulManager>
         base.Awake();
 
         EventManager.AddEventAction("Reset Game", ResetSoulAndLevel);
+        EventManager.AddEventAction("Close Levelup Game", AfterLevelup);
     }
 
     void ResetSoulAndLevel()
@@ -29,12 +31,21 @@ public class SoulManager : Singleton<SoulManager>
 
     public void AddSoul()
     {
-        soul++;
-
+        if(GameManager.s_Instance.GameState != GameState.LevelUp)
+            soul++;
+        else
+            soulOverflow++;
         if (CheckSoulForLevelUp())
         {
             LevelUp();
         }
+    }
+
+    private void AfterLevelup()
+    {
+        soul = soulOverflow;
+        soulOverflow = 0;
+        level++;
     }
 
     bool CheckSoulForLevelUp()
@@ -45,8 +56,6 @@ public class SoulManager : Singleton<SoulManager>
     void LevelUp()
     {
         EventManager.InvokeEvent("Levelup Game");
-        level++;
-        soul = 0;
     }
 
     public void SoulSpawn(Vector3 pos)

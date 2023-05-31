@@ -22,6 +22,8 @@ public class GameManager : Singleton<GameManager>
 
     GameState gameState = GameState.MainMenu;
 
+    public GameState GameState { get { return gameState;} }
+
     public override void Awake()
     {
         base.Awake();
@@ -37,6 +39,7 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEvent("Start Run");
         EventManager.AddEvent("End Run");
         EventManager.AddEvent("Levelup Game");
+        EventManager.AddEvent("Close Levelup Game");
 
         EventManager.AddEventAction("Exit Game", ExitGame);
         EventManager.AddEventAction("Reset Game", () => Time.timeScale = 1);
@@ -51,6 +54,8 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEventAction("Levelup Game", () => Time.timeScale = 0);
         EventManager.AddEventAction("Levelup Game", () => UIManager.s_Instance.SetUIScene("LevelUpHUD"));
         EventManager.AddEventAction("Levelup Game", () => gameState = GameState.LevelUp);
+
+        EventManager.AddEventAction("Close Levelup Game", () => EventManager.InvokeEvent("Resume Game"));
 
         EventManager.AddEventAction("Start Game", () => gameState = GameState.MainMenu);
         EventManager.AddEventAction("Resume Game", () => gameState = GameState.OnRun);

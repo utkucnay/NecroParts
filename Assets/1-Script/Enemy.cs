@@ -8,7 +8,9 @@ public class Enemy : Unit
 {
     public float damage;
     bool lockMove = false;
-    private float damageTime;
+
+    private float damageTimeBegin; 
+    private float damageTimeEnd;
 
     protected override void OnEnable()
     {
@@ -40,16 +42,16 @@ public class Enemy : Unit
 
     private void OnDamage()
     {
-        if (damageTime > Time.time)
+        if (damageTimeEnd > Time.time)
         {
             lockMove = true;
-            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(1.25f, 1.15f, 0, .7f, damageTime - Time.time), 0, .7f));
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(1.25f, 1.15f, 0, .7f, damageTimeBegin - Time.time), 0, .7f));
             MoveDir(Vector2.zero);
         }
         else
         {
             lockMove = false;
-            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTime), 0, .7f));
+            material.SetFloat("_LerpDamage", Mathf.Clamp(Utils.Scale(0f, .1f, 0.7f, 0, Time.time - damageTimeEnd), 0, .7f));
         }
     }
 
@@ -64,7 +66,11 @@ public class Enemy : Unit
     protected override void Damage(float damage)
     {
         base.Damage(damage);
-        damageTime = Time.time + 1.25f;
+
+        if(damageTimeEnd > Time.time)
+            damageTimeBegin = Time.time;
+        
+        damageTimeEnd = Time.time + 1.25f;
     }
 
     bool CheckDistancePlayer(float minDist)
