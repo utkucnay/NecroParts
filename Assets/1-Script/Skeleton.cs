@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Skeleton : Unit
 {
+    private float healhLerp;
+
     protected override void OnEnable()
     {
         maxHealth = GetComponent<SkeletonSM>().GetData<SkeletonProp>("skeletonProp").maxHealth * GetComponent<SkeletonSM>().GetData<SkeletonMultipler>("skeletonMultipler").lifeMultipler;
