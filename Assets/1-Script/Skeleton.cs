@@ -32,8 +32,8 @@ public class Skeleton : Unit
         {
             Damage(float.MaxValue); 
         }
-        float lerp = Mathf.Abs((health / maxHealth) - .7f);
-        lerp = Mathf.Clamp(lerp, .2f, 1f);
+        float lerp = Mathf.Abs((health / maxHealth) - 1f);
+        lerp = Mathf.Clamp(lerp, 0f, 1f);
         material.SetFloat("_LerpDamage", lerp);
     }
 
