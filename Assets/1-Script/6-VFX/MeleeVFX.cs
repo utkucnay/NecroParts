@@ -17,7 +17,7 @@ public class MeleeVFX : VFX
     [SerializeField] GameObject GFX;
     MeleeGFXData meleeGFXData;
     float timer;
-
+    [SerializeField] bool rotate = true; 
     public void SetGFXData(in MeleeGFXData meleeGFXData)
     {
         this.meleeGFXData = meleeGFXData;
@@ -26,8 +26,10 @@ public class MeleeVFX : VFX
 
     private void Start()
     {
-        var angle = Vector2.SignedAngle(meleeGFXData.baseDir, meleeGFXData.targetDir);
-        GFX.transform.localEulerAngles += new Vector3(0, 0, angle);
+        if(rotate){
+            var angle = Vector2.SignedAngle(meleeGFXData.baseDir, meleeGFXData.targetDir);
+            GFX.transform.localEulerAngles += new Vector3(0, 0, angle);
+        }    
     }
 
     private void Update()

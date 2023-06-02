@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackData:
     attackType: 1
-    attackVFX: {fileID: 3232742258450787950, guid: 007a2fcea7b4ba146bbadbe235c6d1ce, type: 3}
+    attackVFX: {fileID: 6127357368333889177, guid: ee900f09b2ee0b543b34d7ebdec49114, type: 3}
     waitTime: 10
     attackInRange: 2
     damage: 20
