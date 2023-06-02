@@ -7,6 +7,11 @@ public class Skeleton : Unit
 {
     private float healhLerp;
 
+    protected override void Start() {
+        base.Start();
+        material.SetTexture("_WhiteTexture", Texture2D.grayTexture);
+    }
+
     protected override void OnEnable()
     {
         maxHealth = GetComponent<SkeletonSM>().GetData<SkeletonProp>("skeletonProp").maxHealth * GetComponent<SkeletonSM>().GetData<SkeletonMultipler>("skeletonMultipler").lifeMultipler;
@@ -27,6 +32,9 @@ public class Skeleton : Unit
         {
             Damage(float.MaxValue); 
         }
+        float lerp = Mathf.Abs((health / maxHealth) - 1f);
+        lerp = Mathf.Clamp(lerp, 0f, 1f);
+        material.SetFloat("_LerpDamage", lerp);
     }
 
     protected override void Death()
