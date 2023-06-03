@@ -19,7 +19,7 @@ MonoBehaviour:
     attackInRange: 1.75
     damage: 20
     attackSpeed: 0
-    scaleAttackBegin: -0.1
+    scaleAttackBegin: 0
     time: 0.3
   randomMoveData:
     attackTarget: 1

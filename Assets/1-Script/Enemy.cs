@@ -12,6 +12,13 @@ public class Enemy : Unit
     private float damageTimeBegin; 
     private float damageTimeEnd;
 
+    protected override void Start()
+    {
+        base.Start();
+        material.SetTexture("_WhiteTexture", Texture2D.whiteTexture);
+
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();

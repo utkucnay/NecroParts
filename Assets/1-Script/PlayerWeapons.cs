@@ -11,6 +11,7 @@ public class PlayerWeapons : MonoBehaviour
     LinkedList<Weapon> weapons;
 
     [SerializeField] GameObject thunderWeaponObj;
+    [SerializeField] GameObject schyteWeaponObj;
 
     private void Awake()
     {
@@ -29,19 +30,20 @@ public class PlayerWeapons : MonoBehaviour
     public void AddWeapon()
     {
         weapons.AddLast(new ThunderWeapon(2.75f, 20, 4, thunderWeaponObj));
+        weapons.AddLast(new ScytheWeapon(2, 15, 1, schyteWeaponObj));
     }
 }
  
 public abstract class Weapon
 {
     public float attackSpeed;
-    public float damage;
+    public int damage;
     public GameObject prefab;
     public int count;
 
     float timer;
 
-    public Weapon(float attackSpeed, float damage, int count, GameObject prefab)
+    public Weapon(float attackSpeed, int damage, int count, GameObject prefab)
     {
         timer = 0;
 
@@ -67,7 +69,7 @@ public abstract class Weapon
 
 class ThunderWeapon : Weapon
 {
-    public ThunderWeapon(float attackSpeed, float damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    public ThunderWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
     {
     }
 
@@ -94,7 +96,7 @@ class ThunderWeapon : Weapon
 
 class MagicWandWeapon : Weapon
 {
-    public MagicWandWeapon(float attackSpeed, float damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    public MagicWandWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
     {
     }
 
@@ -109,5 +111,26 @@ class MagicWandWeapon : Weapon
     {
         var spawnGO = GameObject.Instantiate(prefab);
         yield return new WaitForSeconds(2);
+    }
+}
+
+class ScytheWeapon : Weapon
+{
+    public ScytheWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    {
+
+    }
+
+    protected override void WeaponAttack()
+    {
+        var go = GameObject.Instantiate(prefab, Player.s_Instance.transform.position, Quaternion.identity);
+        go.GetComponent<AttackSlash>().damage = damage;
+        go.GetComponent<MeleeVFX>().SetGFXData(new MeleeGFXData() { 
+            targetDir = Player.s_Instance.Right ? Vector3.right : Vector3.left, 
+            baseDir =  Vector2.left, 
+            scaleAttackBegin = 0, 
+            scaleAttackEnd = 0, 
+            time = 10
+        });
     }
 }

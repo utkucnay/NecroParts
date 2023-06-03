@@ -9,7 +9,7 @@ public class Skeleton : Unit
 
     protected override void Start() {
         base.Start();
-        material.SetTexture("_WhiteTexture", Texture2D.grayTexture);
+        //material.SetTexture("_WhiteTexture", Texture2D.grayTexture);
     }
 
     protected override void OnEnable()
@@ -33,7 +33,7 @@ public class Skeleton : Unit
             Damage(float.MaxValue); 
         }
         float lerp = Mathf.Abs((health / maxHealth) - 1f);
-        lerp = Mathf.Clamp(lerp, 0f, 1f);
+        lerp = Mathf.Clamp(lerp, 0f, .9f);
         material.SetFloat("_LerpDamage", lerp);
     }
 

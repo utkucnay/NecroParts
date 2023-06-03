@@ -6204,6 +6204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thunderWeaponObj: {fileID: 4863926846029788152, guid: b8764ffd08bfc494f86a0c2e19d16a36, type: 3}
+  schyteWeaponObj: {fileID: 4917856883306179340, guid: d35f89e3f3cf8d44980895afe71165e4, type: 3}
 --- !u!1 &913278024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6648,7 +6649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e54e97367640d41a918ec877dd09c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStart: 0
+  forceStart: 1
 --- !u!114 &958756901
 MonoBehaviour:
   m_ObjectHideFlags: 0

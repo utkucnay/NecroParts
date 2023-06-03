@@ -14,6 +14,9 @@ public class Player : Unit
     float damageTimeBegin;
     float damageTimeEnd;
 
+    bool right = false;
+    public bool Right { get { return right;}}
+
     protected override void Awake()
     {
         base.Awake();
@@ -59,10 +62,12 @@ public class Player : Unit
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             dir.x += 1;
+            right = true;
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             dir.x -= 1;
+            right = false;
         }
 
         dir = dir.normalized;

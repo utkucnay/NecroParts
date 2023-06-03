@@ -18,6 +18,7 @@ public class MeleeVFX : VFX
     MeleeGFXData meleeGFXData;
     float timer;
     [SerializeField] bool rotate = true; 
+    [SerializeField] bool followPlayer = false;
     public void SetGFXData(in MeleeGFXData meleeGFXData)
     {
         this.meleeGFXData = meleeGFXData;
@@ -47,5 +48,8 @@ public class MeleeVFX : VFX
             GFX.transform.localPosition += new Vector3(0, .5f, -.5f);
             timer += Time.deltaTime;
         }
+
+        if(followPlayer) 
+            transform.position = Player.s_Instance.transform.position;
     }
 }
