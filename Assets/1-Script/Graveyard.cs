@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Graveyard : MonoBehaviour
+public class Graveyard : Unit
 {
     [SerializeField] private float thresholdDistance = 30;
 
@@ -12,5 +10,13 @@ public class Graveyard : MonoBehaviour
         {
             transform.position = SpawnManager.s_Instance.PosOutCamera();
         }
+    }
+
+    protected override void Death()
+    {
+        Instantiate(AIManager.s_Instance.PotPrefab, transform.position, Quaternion.identity);
+        transform.position = SpawnManager.s_Instance.PosOutCamera();
+        health = maxHealth;
+        death = false;
     }
 }

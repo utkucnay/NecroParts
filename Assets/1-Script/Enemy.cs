@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : Unit
@@ -73,7 +74,8 @@ public class Enemy : Unit
     protected override void Damage(float damage)
     {
         base.Damage(damage);
-
+        var go = Instantiate(AIManager.s_Instance.TextPrefab, transform.position, Quaternion.identity);
+        go.GetComponent<TextMeshPro>().text = damage.ToString();
         if(damageTimeEnd > Time.time)
             damageTimeBegin = Time.time;
         

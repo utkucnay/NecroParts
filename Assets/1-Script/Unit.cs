@@ -14,7 +14,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected float maxHealth;
     protected float health;
 
-    bool death;
+    protected bool death;
 
     protected virtual void Awake()
     {
@@ -66,8 +66,8 @@ public abstract class Unit : MonoBehaviour
 
         if (health <= 0 && !death)
         {
-            Death();
             death = true;
+            Death();
         }
     }
 

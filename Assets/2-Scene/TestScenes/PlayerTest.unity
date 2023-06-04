@@ -3659,10 +3659,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.020833334
     y: 0
-    width: 1
-    height: 1
+    width: 0.125
+    height: 0.22222222
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6664,6 +6664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puffVFX: {fileID: 8006543486757190278, guid: a03b5e12f3929c44caa411044c284023, type: 3}
   bones: {fileID: 2925779313328240347, guid: 4f7fbabc1e0aa234a8e2d3fb04322ec3, type: 3}
+  TextPrefab: {fileID: 3597863397607064447, guid: ae4356a7120c19948860e211329148ac, type: 3}
+  PotPrefab: {fileID: 1936854856585530676, guid: bea6a5387625c3047bbcbc5e710d15ba, type: 3}
 --- !u!114 &958756902
 MonoBehaviour:
   m_ObjectHideFlags: 0

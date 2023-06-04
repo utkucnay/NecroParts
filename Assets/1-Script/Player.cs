@@ -17,6 +17,11 @@ public class Player : Unit
     bool right = false;
     public bool Right { get { return right;}}
 
+    public void AddHealth(int num){
+        health += num;
+        health = Mathf.Clamp(health, -1, maxHealth);
+    }
+
     protected override void Awake()
     {
         base.Awake();

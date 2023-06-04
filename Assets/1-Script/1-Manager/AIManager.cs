@@ -18,6 +18,8 @@ public class AIManager : Singleton<AIManager>
 
     [SerializeField] public GameObject puffVFX;
     [SerializeField] public GameObject bones;
+    [SerializeField] public GameObject TextPrefab;
+    [SerializeField] public GameObject PotPrefab;
 
     public override void Awake()
     {
