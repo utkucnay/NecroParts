@@ -13,11 +13,9 @@ public class Enemy : Unit
     private float damageTimeBegin; 
     private float damageTimeEnd;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         material.SetTexture("_WhiteTexture", Texture2D.whiteTexture);
-
     }
 
     protected override void OnEnable()
@@ -76,6 +74,7 @@ public class Enemy : Unit
         base.Damage(damage);
         var go = Instantiate(AIManager.s_Instance.TextPrefab, transform.position, Quaternion.identity);
         go.GetComponent<TextMeshPro>().text = damage.ToString();
+
         if(damageTimeEnd > Time.time)
             damageTimeBegin = Time.time;
         

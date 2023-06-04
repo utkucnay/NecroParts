@@ -25,10 +25,6 @@ public abstract class Unit : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    protected virtual void Start()
-    {
-        health = maxHealth;
-    }
 
     protected virtual void OnEnable()
     {
