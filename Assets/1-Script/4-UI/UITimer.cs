@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UITimer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    TextMeshProUGUI textMesh;
+
+    private void Awake() {
+        textMesh = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private void Update() {
+        textMesh.text = System.TimeSpan.FromSeconds(WaveTimer.s_Instance.timer).ToString(@"mm\:ss");
+    }    
 }
