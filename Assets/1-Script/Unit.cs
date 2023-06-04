@@ -6,6 +6,7 @@ public abstract class Unit : MonoBehaviour
 {
     protected SpriteRenderer spriteRenderer;
     protected Material material;
+    protected Animator animator;
 
     MoveCommandTransform moveCommandTransform;
     RotateCommand rotateCommand;
@@ -21,6 +22,7 @@ public abstract class Unit : MonoBehaviour
         material = spriteRenderer.material;
         moveCommandTransform = new MoveCommandTransform(transform, Vector2.zero);
         rotateCommand = new RotateCommand(spriteRenderer, Vector2.zero);
+        animator = GetComponentInChildren<Animator>();
     }
 
     protected virtual void Start()
@@ -38,6 +40,8 @@ public abstract class Unit : MonoBehaviour
     {
         moveCommandTransform._velocity = velocity;
         CommandStream.AddCommand(moveCommandTransform);
+        if(velocity == Vector2.zero) animator?.SetFloat("_TimeScale", 0);
+        else animator?.SetFloat("_TimeScale", 1);
     }
 
     public void RotateDir(Vector2 dir)

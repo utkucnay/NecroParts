@@ -130,7 +130,7 @@ class ScytheWeapon : Weapon
             baseDir =  Vector2.left, 
             scaleAttackBegin = 0, 
             scaleAttackEnd = 0, 
-            time = 10
+            time = .75f
         });
     }
 }

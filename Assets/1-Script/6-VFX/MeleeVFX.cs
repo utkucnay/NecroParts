@@ -19,10 +19,19 @@ public class MeleeVFX : VFX
     float timer;
     [SerializeField] bool rotate = true; 
     [SerializeField] bool followPlayer = false;
+
+    Animator anim;
+
     public void SetGFXData(in MeleeGFXData meleeGFXData)
     {
         this.meleeGFXData = meleeGFXData;
+        anim.SetFloat("_TimeScale", 1 / meleeGFXData.time);    
+        Destroy(gameObject, meleeGFXData.time);
         timer = 0;
+    }
+    
+    private void Awake() {
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Start()

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class VFX : MonoBehaviour
 {
-    Animator animator;
-
+    [SerializeField] protected bool autoCloseVFX = true;
     void OnEnable()
     {
+        if(autoCloseVFX) {
         float length = GetComponentInChildren<Animator>().GetCurrentAnimatorClipInfo(0).LongLength;
         Destroy(gameObject, length);
+        }
     }
 }
