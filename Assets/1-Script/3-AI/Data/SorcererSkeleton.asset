@@ -15,7 +15,7 @@ MonoBehaviour:
   attackData:
     attackType: 0
     attackVFX: {fileID: 1791204685794363755, guid: 19d7d8139b98dce4f8a9178f145e6b77, type: 3}
-    waitTime: 5
+    waitTime: 2.25
     attackInRange: 4
     damage: 20
     attackSpeed: 20
@@ -28,5 +28,5 @@ MonoBehaviour:
     moveRangeMin: 5
     speed: 5
   skeletonProp:
-    maxHealth: 15
-    afterSpawnTime: 1
+    maxHealth: 10
+    afterSpawnTime: 0.5

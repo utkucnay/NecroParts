@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a420dc592d8eb146bfb0534931ea678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 45
-  damage: 10
+  maxHealth: 5
+  damage: 5
 --- !u!54 &4743444000794399568
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 4743444001206052780}
   - component: {fileID: 4743444001206052783}
   - component: {fileID: 4743444001206052782}
+  - component: {fileID: 8784231852292782594}
   m_Layer: 6
   m_Name: GFX
   m_TagString: Enemy
@@ -163,3 +164,24 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &8784231852292782594
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743444001206052781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4eace8891fcc2fc4abd3f21a2c39d1ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

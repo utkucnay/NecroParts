@@ -65,12 +65,13 @@ public class Enemy : Unit
     {
         Vector2 dir = Player.s_Instance.transform.position - transform.position;
         dir = dir.normalized;
-        MoveDir(dir * 3);
+        MoveDir(dir * (2 + Utils.Scale(0, 300, 0, 2, WaveTimer.s_Instance.timer) ));
         RotateDir(dir);
     }
 
     protected override void Damage(float damage)
     {
+        damage = Math.Clamp(damage + UnityEngine.Random.Range(-2, 2), 1, 300);
         base.Damage(damage);
         var go = Instantiate(AIManager.s_Instance.TextPrefab, transform.position, Quaternion.identity);
         go.GetComponent<TextMeshPro>().text = damage.ToString();

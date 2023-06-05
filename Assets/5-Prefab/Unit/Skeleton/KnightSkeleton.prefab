@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8283221271963204382}
   - component: {fileID: 8283221271963204381}
   - component: {fileID: 8283221272553586712}
+  - component: {fileID: 1106024005271150796}
   m_Layer: 0
   m_Name: GFX
   m_TagString: Untagged
@@ -99,6 +100,27 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1106024005271150796
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283221271963204383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212bb4cc087fe2d47b1b1b91ddce5c7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8705779778873837600
 GameObject:
   m_ObjectHideFlags: 0

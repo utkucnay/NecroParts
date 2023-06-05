@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2103947093}
   - component: {fileID: 2103947094}
   - component: {fileID: 396339419551514825}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8882870621830547014}
   - component: {fileID: 4930707794059647280}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Graveyard
   m_TagString: Enemy
   m_Icon: {fileID: 0}

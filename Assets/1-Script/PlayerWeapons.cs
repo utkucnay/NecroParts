@@ -29,8 +29,8 @@ public class PlayerWeapons : MonoBehaviour
 
     public void AddWeapon()
     {
-        weapons.AddLast(new ThunderWeapon(2.75f, 20, 4, thunderWeaponObj));
-        weapons.AddLast(new ScytheWeapon(2, 15, 1, schyteWeaponObj));
+        weapons.AddLast(new ThunderWeapon(3.25f, 15, 4, thunderWeaponObj));
+        weapons.AddLast(new ScytheWeapon(1.5f, 10, 1, schyteWeaponObj));
     }
 }
  
