@@ -37,7 +37,7 @@ public abstract class Unit : MonoBehaviour
         moveCommandTransform._velocity = velocity;
         CommandStream.AddCommand(moveCommandTransform);
         if(velocity == Vector2.zero) animator?.SetFloat("_TimeScale", 0);
-        else animator?.SetFloat("_TimeScale", 1);
+        else animator?.SetFloat("_TimeScale", velocity.magnitude / 2);
     }
 
     public void RotateDir(Vector2 dir)

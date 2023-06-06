@@ -17,7 +17,7 @@ MonoBehaviour:
     attackVFX: {fileID: 6127357368333889177, guid: ee900f09b2ee0b543b34d7ebdec49114, type: 3}
     waitTime: 5
     attackInRange: 2
-    damage: 20
+    damage: 15
     attackSpeed: 0
     scaleAttackBegin: 0.5
     time: 0.5

@@ -42,7 +42,7 @@ public class Graveyard : Unit
 
     protected override void Death()
     {
-        if(UnityEngine.Random.Range(1, 101) < 35)
+        if(UnityEngine.Random.Range(1, 101) < 20)
             Instantiate(AIManager.s_Instance.PotPrefab, transform.position, Quaternion.identity);
         
         transform.position = SpawnManager.s_Instance.PosOutCamera();
