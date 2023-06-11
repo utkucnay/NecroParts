@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AttackSlash : MonoBehaviour
 {
-    public int damage;
-    Vector3 pos;
+    DamageMeleeData damageMeleeData;
+    public float damage;
 
     LinkedList<GameObject> hitedGOs;
 
@@ -14,9 +14,9 @@ public class AttackSlash : MonoBehaviour
         hitedGOs = new LinkedList<GameObject>();
     }
 
-    public void SetPos(in Vector3 pos)
+    public void SetDamageMeleeData(DamageMeleeData damageMeleeData)
     {
-        this.pos = pos;
+        this.damageMeleeData = damageMeleeData;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +24,7 @@ public class AttackSlash : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             if (hitedGOs.Contains(other.gameObject)) return;
-            other.GetComponentInParent<Unit>().DamageMelee(damage, new DamageMeleeData() { meleePos = pos });
+            other.GetComponentInParent<Unit>().DamageMelee(damage, damageMeleeData);
             hitedGOs.AddLast(other.gameObject);
         }
     }

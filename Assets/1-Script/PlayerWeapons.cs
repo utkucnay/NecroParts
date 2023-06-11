@@ -29,8 +29,8 @@ public class PlayerWeapons : MonoBehaviour
 
     public void AddWeapon()
     {
-        weapons.AddLast(new ThunderWeapon(3.25f, 15, 4, thunderWeaponObj));
-        weapons.AddLast(new ScytheWeapon(1.5f, 10, 1, schyteWeaponObj));
+        weapons.AddLast(new ThunderWeapon(3.25f, 15, 4, transform, thunderWeaponObj));
+        weapons.AddLast(new ScytheWeapon(1.5f, 10, 1, transform, schyteWeaponObj));
     }
 }
  
@@ -40,10 +40,11 @@ public abstract class Weapon
     public int damage;
     public GameObject prefab;
     public int count;
+    public Transform transform;
 
     float timer;
 
-    public Weapon(float attackSpeed, int damage, int count, GameObject prefab)
+    public Weapon(float attackSpeed, int damage, int count, Transform transform, GameObject prefab)
     {
         timer = 0;
 
@@ -51,6 +52,7 @@ public abstract class Weapon
         this.attackSpeed = attackSpeed;
         this.damage = damage;
         this.prefab = prefab;
+        this.transform = transform;
     }
 
     public void Update()
@@ -69,7 +71,7 @@ public abstract class Weapon
 
 class ThunderWeapon : Weapon
 {
-    public ThunderWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    public ThunderWeapon(float attackSpeed, int damage, int count, Transform transform, GameObject prefab) : base(attackSpeed, damage, count, transform, prefab)
     {
     }
 
@@ -96,7 +98,7 @@ class ThunderWeapon : Weapon
 
 class MagicWandWeapon : Weapon
 {
-    public MagicWandWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    public MagicWandWeapon(float attackSpeed, int damage, int count, Transform transform, GameObject prefab) : base(attackSpeed, damage, count, transform, prefab)
     {
     }
 
@@ -116,15 +118,17 @@ class MagicWandWeapon : Weapon
 
 class ScytheWeapon : Weapon
 {
-    public ScytheWeapon(float attackSpeed, int damage, int count, GameObject prefab) : base(attackSpeed, damage, count, prefab)
+    public ScytheWeapon(float attackSpeed, int damage, int count, Transform transform, GameObject prefab) : base(attackSpeed, damage, count, transform, prefab)
     {
-
     }
 
     protected override void WeaponAttack()
     {
         var go = GameObject.Instantiate(prefab, Player.s_Instance.transform.position, Quaternion.identity);
-        go.GetComponent<AttackSlash>().damage = damage;
+        var aSlash = go.GetComponent<AttackSlash>();
+        aSlash.damage = damage;
+        aSlash.SetDamageMeleeData(new DamageMeleeData() { meleePos = transform.position, knockbackPower = .5f });
+        
         go.GetComponent<MeleeVFX>().SetGFXData(new MeleeGFXData() { 
             targetDir = Player.s_Instance.Right ? Vector3.right : Vector3.left, 
             baseDir =  Vector2.left, 

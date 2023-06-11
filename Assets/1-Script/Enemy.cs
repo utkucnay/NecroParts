@@ -29,6 +29,23 @@ public class Enemy : Unit
         AIManager.s_Instance.UnregisterEnemy(this);
     }
 
+    public override void DamageProjectile(float damage, DamageProjectileData damageProjectileData)
+    {
+        base.DamageProjectile(damage, damageProjectileData);
+        Knockback(damageProjectileData.moveDir, damageProjectileData.knockbackPower);
+    }
+
+    public override void DamageMelee(float damage, DamageMeleeData damageMeleeData)
+    {
+        base.DamageMelee(damage, damageMeleeData);
+        Knockback(Vector3.Normalize(transform.position - damageMeleeData.meleePos), damageMeleeData.knockbackPower);
+    }
+
+    protected override void Knockback(Vector3 dir, float knockbackPower)
+    {
+        base.Knockback(dir, knockbackPower);
+    }
+
     private void Update()
     {
         if (CheckDistancePlayer(.6f))
@@ -88,6 +105,7 @@ public class Enemy : Unit
     }
     protected override void Death()
     {
+        base.Death();
         Destroy(gameObject);
         AIManager.s_Instance.SpawnSkeleton(transform.position);
     }

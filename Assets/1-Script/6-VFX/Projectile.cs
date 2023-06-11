@@ -7,6 +7,7 @@ public struct ProjectileData
     public Vector3 dir;
     public float speed;
     public int damage;
+    public float knockbackPower;
 }
 
 public class Projectile : MonoBehaviour
@@ -52,6 +53,7 @@ public class Projectile : MonoBehaviour
             DamageProjectileData damageProjectileData = new DamageProjectileData();
             damageProjectileData.projectilePos = transform.position;
             damageProjectileData.moveDir = projectileData.dir;
+            damageProjectileData.knockbackPower = projectileData.knockbackPower;
             other.GetComponentInParent<Unit>().DamageProjectile(projectileData.damage, damageProjectileData);
             oldDamagedEnemies.AddLast(other.gameObject);
         }

@@ -21,5 +21,6 @@ public class WaveTimer : Singleton<WaveTimer>
     private void Update()
     {
         timer += Time.deltaTime;
+
     }
 }

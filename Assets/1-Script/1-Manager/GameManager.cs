@@ -66,6 +66,9 @@ public class GameManager : Singleton<GameManager>
         EventManager.AddEventAction("Start Run", () => Time.timeScale = 1);
         EventManager.AddEventAction("End Run", () => gameState = GameState.MainMenu);
         EventManager.AddEventAction("End Run", () => Time.timeScale = 0);
+        EventManager.AddEventAction("End Run", () => {
+            Application.LoadLevel(Application.loadedLevel);
+        });
 
         SkeletonUIData.instance.Setup();
     }

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class Unit : MonoBehaviour
 {
     protected SpriteRenderer spriteRenderer;
     protected Material material;
     protected Animator animator;
+    protected Rigidbody rb;
 
     MoveCommandTransform moveCommandTransform;
     RotateCommand rotateCommand;
@@ -23,6 +25,7 @@ public abstract class Unit : MonoBehaviour
         moveCommandTransform = new MoveCommandTransform(transform, Vector2.zero);
         rotateCommand = new RotateCommand(spriteRenderer, Vector2.zero);
         animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
 
@@ -46,12 +49,12 @@ public abstract class Unit : MonoBehaviour
         CommandStream.AddCommand(rotateCommand);
     }
 
-    public void DamageMelee(float damage, DamageMeleeData damageMeleeData)
+    public virtual void DamageMelee(float damage, DamageMeleeData damageMeleeData)
     {
         Damage(damage);
     }
 
-    public void DamageProjectile(float damage, DamageProjectileData damageMeleeData)
+    public virtual void DamageProjectile(float damage, DamageProjectileData damageMeleeData)
     {
         Damage(damage);
     }
@@ -67,13 +70,22 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-    protected abstract void Death();
+    protected virtual void Knockback(Vector3 dir, float knockbackPower) 
+    {
+        transform.DOMove(transform.position + dir * knockbackPower, .1f);     
+    }
+
+    protected virtual void Death()
+    {
+        DOTween.Kill(transform);
+    }
 }
 
 
 public struct DamageMeleeData
 {
     public Vector3 meleePos;
+    public float knockbackPower;
 }
 
 
@@ -81,4 +93,5 @@ public struct DamageProjectileData
 {
     public Vector3 projectilePos;
     public Vector3 moveDir;
+    public float knockbackPower;
 }

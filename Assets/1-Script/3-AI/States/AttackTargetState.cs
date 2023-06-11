@@ -70,7 +70,7 @@ public class AttackTargetState : AttackState
         dir = dir.normalized;
 
         var projectile = VFXObj.GetComponent<Projectile>();
-        projectile.SetProjetileData(new ProjectileData() { damage = (int)(attackData.damage * multipler.damageMultipler), dir = dir, speed = attackData.attackSpeed });
+        projectile.SetProjetileData(new ProjectileData() { damage = (int)(attackData.damage * multipler.damageMultipler), dir = dir, speed = attackData.attackSpeed, knockbackPower = .2f });
         VFXObj.SetActive(true);
     }
 
@@ -88,7 +88,7 @@ public class AttackTargetState : AttackState
 
         var meleeData = slashObj.GetComponent<AttackSlash>();
         meleeData.damage = (int)(attackData.damage * multipler.damageMultipler);
-        meleeData.SetPos(transform.position);
+        meleeData.SetDamageMeleeData( new DamageMeleeData(){meleePos = transform.position, knockbackPower = .2f});
 
         var meleeGFX = slashObj.GetComponent<MeleeVFX>();
         meleeGFX.SetGFXData(new MeleeGFXData()
