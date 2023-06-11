@@ -31,14 +31,14 @@ public class Enemy : Unit
 
     public override void DamageProjectile(float damage, DamageProjectileData damageProjectileData)
     {
-        base.DamageProjectile(damage, damageProjectileData);
         Knockback(damageProjectileData.moveDir, damageProjectileData.knockbackPower);
+        base.DamageProjectile(damage, damageProjectileData);
     }
 
     public override void DamageMelee(float damage, DamageMeleeData damageMeleeData)
     {
-        base.DamageMelee(damage, damageMeleeData);
         Knockback(Vector3.Normalize(transform.position - damageMeleeData.meleePos), damageMeleeData.knockbackPower);
+        base.DamageMelee(damage, damageMeleeData);
     }
 
     protected override void Knockback(Vector3 dir, float knockbackPower)
@@ -105,7 +105,6 @@ public class Enemy : Unit
     }
     protected override void Death()
     {
-        base.Death();
         Destroy(gameObject);
         AIManager.s_Instance.SpawnSkeleton(transform.position);
     }

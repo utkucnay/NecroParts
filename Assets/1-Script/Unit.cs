@@ -66,8 +66,10 @@ public abstract class Unit : MonoBehaviour
         if (health <= 0 && !death)
         {
             death = true;
+            transform.DOKill();
             Death();
         }
+        
     }
 
     protected virtual void Knockback(Vector3 dir, float knockbackPower) 
@@ -75,10 +77,7 @@ public abstract class Unit : MonoBehaviour
         transform.DOMove(transform.position + dir * knockbackPower, .1f);     
     }
 
-    protected virtual void Death()
-    {
-        DOTween.Kill(transform);
-    }
+    protected abstract void Death();
 }
 
 
