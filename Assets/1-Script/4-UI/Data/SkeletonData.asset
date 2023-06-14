@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletons:
   - skeletonName: Warrior
-    skeletonDescribe: Raise a Warrior
+    skeletonDescribe: Warriors slash vertical, low damage
     icon: {fileID: 463804724, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 0
     skeletonSMConfig: {fileID: 11400000, guid: 77c1cd264b2564d4aa4d6dbbb8cd371a, type: 2}
@@ -23,7 +23,7 @@ MonoBehaviour:
     skeletonUpgradeUIs: []
     prefab: {fileID: 730371803975196639, guid: a791aa08876541b459553c9893960849, type: 3}
   - skeletonName: Double Sword
-    skeletonDescribe: Raise a Double Sword
+    skeletonDescribe: 
     icon: {fileID: 1193054896, guid: 335a1af32f2192a4fa7e2fa2066974cd, type: 3}
     skeletonType: 0
     skeletonSMConfig: {fileID: 11400000, guid: 9eb69b041c445bc42a3a5e0bf23d2059, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     prefab: {fileID: 2224794638021976829, guid: 929a72cfe180b8441a81214e544bba5e, type: 3}
   skeletonUpgrades:
   - skeletonName: Warrior
-    upgradeName: Upgrade Warrior
+    upgradeName: Upgrade Warriors
     upgradeDescribe: Attack increase %10
     upgradeValue: 0.1
     upgradeType: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - skeletonName: Warrior
-    upgradeName: Upgrade Warrior
+    upgradeName: Upgrade Warriors
     upgradeDescribe: Attack Speed increase %10
     upgradeValue: 0.1
     upgradeType: 2
@@ -129,7 +129,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - skeletonName: Warrior
-    upgradeName: Upgrade Warrior
+    upgradeName: Upgrade Warriors
     upgradeDescribe: Attack Range increase %10
     upgradeValue: 0.1
     upgradeType: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - skeletonName: Warrior
-    upgradeName: Upgrade Warrior
+    upgradeName: Upgrade Warriors
     upgradeDescribe: Life Time increase %10
     upgradeValue: 0.1
     upgradeType: 3
